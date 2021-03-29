@@ -3,3 +3,4 @@
 ## Todo
 
 - normalize JSON response so that it mirrors what rails backend serves
+- 
