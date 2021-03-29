@@ -1,0 +1,1656 @@
+{
+  "data": [
+    {
+      "id": "e6add03e-25cd-4e03-8f48-0110ada6d02a",
+      "type": "landlord",
+      "attributes": {
+        "name": "Sandra Veach",
+        "created_at": "2021-01-28T18:13:45.961Z",
+        "id": "e6add03e-25cd-4e03-8f48-0110ada6d02a",
+        "rating": null,
+        "image_url": "https://images.unsplash.com/photo-1610920810409-4816519db4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "b0158c21-ac1a-474a-af70-8ea334f5b295",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+      "type": "landlord",
+      "attributes": {
+        "name": "John Paul Ward",
+        "created_at": "2021-01-27T20:44:14.984Z",
+        "id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "rating": 5,
+        "image_url": "https://images.unsplash.com/photo-1610886236389-8ca54ecafef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "852a4d19-012c-4db0-afcd-82e9d9811c39",
+              "type": "property"
+            },
+            {
+              "id": "92d0ad8a-693c-4d7a-8b71-78cdfafa05c8",
+              "type": "property"
+            },
+            {
+              "id": "186e6fe8-e26b-4917-acaa-f81cb9d083d7",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "b346d101-3a4d-43e2-b363-eb0cdd1c8f9e",
+              "type": "review"
+            },
+            {
+              "id": "148827a5-714b-4bea-97c7-54c6b721642a",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bdb6142f-0594-4db0-9c01-55f2a934079a",
+      "type": "landlord",
+      "attributes": {
+        "name": "Ben Foley",
+        "created_at": "2021-01-25T17:52:31.990Z",
+        "id": "bdb6142f-0594-4db0-9c01-55f2a934079a",
+        "rating": null,
+        "image_url": "https://images.unsplash.com/photo-1611246051576-966bd38dd99f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": []
+        },
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "fc73b119-be19-4b24-931b-473c85ef0c33",
+      "type": "landlord",
+      "attributes": {
+        "name": "Danny Orendorff",
+        "created_at": "2021-01-25T17:48:16.764Z",
+        "id": "fc73b119-be19-4b24-931b-473c85ef0c33",
+        "rating": null,
+        "image_url": "https://images.unsplash.com/photo-1610795140071-3eff35d6bb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": []
+        },
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "74e475b4-0461-4828-bb4e-a114d360d667",
+      "type": "landlord",
+      "attributes": {
+        "name": "Daniel Foley",
+        "created_at": "2021-01-25T17:43:09.466Z",
+        "id": "74e475b4-0461-4828-bb4e-a114d360d667",
+        "rating": null,
+        "image_url": "https://images.unsplash.com/photo-1611077225077-480aa3e4a6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": []
+        },
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+      "type": "landlord",
+      "attributes": {
+        "name": "Joaquín Cormier",
+        "created_at": "2020-12-03T18:35:34.798Z",
+        "id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "rating": 2.5833333333333335,
+        "image_url": "https://images.unsplash.com/photo-1596134624919-425705642ddd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "587e9398-9e4c-4e2f-a890-f5c9f3405c5c",
+              "type": "property"
+            },
+            {
+              "id": "ec73b0b0-93a2-48b8-8b4b-27a82a9b426f",
+              "type": "property"
+            },
+            {
+              "id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "1c646483-772e-485c-b019-4eba21312768",
+              "type": "review"
+            },
+            {
+              "id": "3d99d20f-f7a8-4f38-a661-932f415a0204",
+              "type": "review"
+            },
+            {
+              "id": "d166b22e-3b7a-43bf-a41e-879d49e9d008",
+              "type": "review"
+            },
+            {
+              "id": "352465b1-097d-4d1b-97e6-1d489a1db062",
+              "type": "review"
+            },
+            {
+              "id": "a2696565-6b39-4543-b1d3-0d3e44ff935f",
+              "type": "review"
+            },
+            {
+              "id": "9fa00d8a-0bce-46e7-960b-b3d88221204a",
+              "type": "review"
+            },
+            {
+              "id": "fa9b68ec-e642-4dee-b592-c58ef51f226c",
+              "type": "review"
+            },
+            {
+              "id": "408d4664-c7fe-4ca6-80d8-d2f3f7c9a06f",
+              "type": "review"
+            },
+            {
+              "id": "25ff6ef3-38e1-47e0-9a0a-f5d2a9d63fea",
+              "type": "review"
+            },
+            {
+              "id": "d2dd3892-5b59-4edb-a5c9-d9dbea232f8b",
+              "type": "review"
+            },
+            {
+              "id": "9705b9a6-df81-4db2-9ea0-588615dc9b2e",
+              "type": "review"
+            },
+            {
+              "id": "d2a26564-6505-462f-9b58-e1fb9b80544d",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+      "type": "landlord",
+      "attributes": {
+        "name": "Eddie Bane",
+        "created_at": "2020-12-03T18:35:34.795Z",
+        "id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "rating": 3,
+        "image_url": "https://images.unsplash.com/photo-1588671335940-2a6646b6bb0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "f7afc841-65f6-41eb-882a-51cd1b045769",
+              "type": "property"
+            },
+            {
+              "id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+              "type": "property"
+            },
+            {
+              "id": "d73efe94-055b-4b74-a663-e9d5a3b639e0",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "8fdaa05f-d1d3-4271-869d-6c6ade8c9edc",
+              "type": "review"
+            },
+            {
+              "id": "bce318ce-b0d0-457a-ba2f-cde8e250e2a9",
+              "type": "review"
+            },
+            {
+              "id": "d7059535-3e1b-4eaf-bbfa-4a5504204035",
+              "type": "review"
+            },
+            {
+              "id": "710f7189-2a55-47b9-b273-554671564919",
+              "type": "review"
+            },
+            {
+              "id": "220db4f7-fa58-4cd6-986e-8124c5c35f7f",
+              "type": "review"
+            },
+            {
+              "id": "8b73db97-5b93-40e2-8f2a-dff9bd86f470",
+              "type": "review"
+            },
+            {
+              "id": "a39d9d1f-e158-4262-8a99-5a11cc1d1f01",
+              "type": "review"
+            },
+            {
+              "id": "f5ce8f20-1121-48d1-9253-d9088d557422",
+              "type": "review"
+            },
+            {
+              "id": "71891fb2-65bd-48f0-8b27-c6f03f765ed5",
+              "type": "review"
+            },
+            {
+              "id": "08fea85c-c618-4d83-b979-acac05485cbf",
+              "type": "review"
+            },
+            {
+              "id": "5ecff5ea-5230-419a-bdfc-35ab6667a95b",
+              "type": "review"
+            },
+            {
+              "id": "d9223bca-6b88-4af1-be90-2d1ceeccc2b1",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+      "type": "landlord",
+      "attributes": {
+        "name": "Cristobal Wuckert",
+        "created_at": "2020-12-03T18:35:34.791Z",
+        "id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "rating": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1572885891571-446f74aef079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "65ed87d5-5824-4339-b188-06169219be67",
+              "type": "property"
+            },
+            {
+              "id": "b826a4a8-8519-46f4-a9e4-b37c87dfe74d",
+              "type": "property"
+            },
+            {
+              "id": "ce56d15e-3c62-4536-9c03-c00defeb17ef",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "7cb2a7dd-7a9c-4f4f-926b-1ea3dbbdeb05",
+              "type": "review"
+            },
+            {
+              "id": "616b33be-df80-48c5-b0a7-75e679802a35",
+              "type": "review"
+            },
+            {
+              "id": "0f52c48a-6c5c-4127-a729-4d240ab038d1",
+              "type": "review"
+            },
+            {
+              "id": "e2cb6890-6931-4d3e-9db5-b22e5cdd2edd",
+              "type": "review"
+            },
+            {
+              "id": "cf3aa162-eb19-4632-b473-100c289e234d",
+              "type": "review"
+            },
+            {
+              "id": "908ddac7-d419-46e7-b228-458c44d688ae",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+      "type": "landlord",
+      "attributes": {
+        "name": "Parker Hayes",
+        "created_at": "2020-12-03T18:35:34.786Z",
+        "id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "rating": 3.4444444444444446,
+        "image_url": "https://images.unsplash.com/photo-1519084278803-b94f11e1c63b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "29aaf6a7-0a34-4c10-961b-6e127698a0a1",
+              "type": "property"
+            },
+            {
+              "id": "6b5802d5-f8a7-40b0-bbf5-5fda3dc8d9e2",
+              "type": "property"
+            },
+            {
+              "id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "0af2c21e-b195-4cbd-ac1e-86093414772c",
+              "type": "review"
+            },
+            {
+              "id": "260f5642-5385-4c16-943b-f54d39149ca8",
+              "type": "review"
+            },
+            {
+              "id": "d3e97f7a-cfa8-40f2-a604-470ea06bc2d1",
+              "type": "review"
+            },
+            {
+              "id": "dd2acba9-ed2d-4c90-b468-1ab4a81a3d3a",
+              "type": "review"
+            },
+            {
+              "id": "95d4c0d2-4b3b-44c1-ba31-9202203a6e0e",
+              "type": "review"
+            },
+            {
+              "id": "cadbdcc0-c1fc-414b-8ff7-ffcdee2c9fe7",
+              "type": "review"
+            },
+            {
+              "id": "75ed6642-c506-4b8b-b231-866e33b17874",
+              "type": "review"
+            },
+            {
+              "id": "c09c2ca7-fa2f-4036-80dc-916ac0fe23ba",
+              "type": "review"
+            },
+            {
+              "id": "433ff394-502b-4e42-8cbe-b8ec7c9b5a56",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+      "type": "landlord",
+      "attributes": {
+        "name": "Fr. Shondra Moore",
+        "created_at": "2020-12-03T18:35:34.695Z",
+        "id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "rating": 3.3333333333333335,
+        "image_url": "https://images.unsplash.com/flagged/photo-1550575240-2a00e9636d51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"
+      },
+      "relationships": {
+        "properties": {
+          "data": [
+            {
+              "id": "75cc76f0-c8e8-44bd-b3ac-09f5744048be",
+              "type": "property"
+            },
+            {
+              "id": "33743cce-bf9e-4d4d-a8b4-111f3c9f4d73",
+              "type": "property"
+            },
+            {
+              "id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+              "type": "property"
+            }
+          ]
+        },
+        "reviews": {
+          "data": [
+            {
+              "id": "b2a2620c-b2e1-4532-98d8-66ef117afd90",
+              "type": "review"
+            },
+            {
+              "id": "0b771e84-30f2-4a0a-ad76-4d1ceed10793",
+              "type": "review"
+            },
+            {
+              "id": "231ba7e9-3091-448b-be07-dcaeca9c6482",
+              "type": "review"
+            },
+            {
+              "id": "d90ea1ea-1839-4b51-a3e5-06c70b466261",
+              "type": "review"
+            },
+            {
+              "id": "a1c2647a-d4f2-4b82-ac4f-115353558e27",
+              "type": "review"
+            },
+            {
+              "id": "a283ebd5-420c-4747-8110-01c48aa829e9",
+              "type": "review"
+            },
+            {
+              "id": "11fca4f5-b476-448e-87ec-3da1a04dd18d",
+              "type": "review"
+            },
+            {
+              "id": "ca645c25-4df5-4e91-bcfa-81d6758504db",
+              "type": "review"
+            },
+            {
+              "id": "2b83d1e3-a4d7-4a2a-a5c0-786b44c708ff",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "b0158c21-ac1a-474a-af70-8ea334f5b295",
+      "type": "property",
+      "attributes": {
+        "address": "8975 Pleasantville Rd",
+        "landlord_id": "e6add03e-25cd-4e03-8f48-0110ada6d02a",
+        "rating": null,
+        "image_url": "https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-twilight-picture-id1026205392?k=6&m=1026205392&s=612x612&w=0&h=pe0Pqbm7GKHl7cmEjf9Drc7Fp-JwJ6aTywsGfm5eQm4=",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "852a4d19-012c-4db0-afcd-82e9d9811c39",
+      "type": "property",
+      "attributes": {
+        "address": "1234 Main St",
+        "landlord_id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "rating": 5,
+        "image_url": "https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/dn9JmbyHvw0DTUWlpE8V9Z0K4lU=/1660x934/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/S4ZX2DV7BZDW5HW54OMMISE4Y4.jpg",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "b346d101-3a4d-43e2-b363-eb0cdd1c8f9e",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "92d0ad8a-693c-4d7a-8b71-78cdfafa05c8",
+      "type": "property",
+      "attributes": {
+        "address": "5678 Broad St",
+        "landlord_id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "rating": 5,
+        "image_url": "https://images.wsj.net/im-193186?width=620&size=1.5",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "148827a5-714b-4bea-97c7-54c6b721642a",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "186e6fe8-e26b-4917-acaa-f81cb9d083d7",
+      "type": "property",
+      "attributes": {
+        "address": "Delete me",
+        "landlord_id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "rating": null,
+        "image_url": "https://images1.apartments.com/i2/zvFbLJ-Mttg6L3tQZ2kzoMrVwEbidrrXSl9m8hC-7bg/111/fairfax-apartments-philadelphia-pa-courtyard.jpg",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": []
+        }
+      }
+    },
+    {
+      "id": "b346d101-3a4d-43e2-b363-eb0cdd1c8f9e",
+      "type": "review",
+      "attributes": {
+        "content": "i'm loving it!",
+        "rating": 5,
+        "property_id": "852a4d19-012c-4db0-afcd-82e9d9811c39",
+        "landlord_id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "landlord_rating": 5,
+        "property_rating": 5,
+        "address": "1234 Main St"
+      }
+    },
+    {
+      "id": "148827a5-714b-4bea-97c7-54c6b721642a",
+      "type": "review",
+      "attributes": {
+        "content": "What a cool place!",
+        "rating": 5,
+        "property_id": "92d0ad8a-693c-4d7a-8b71-78cdfafa05c8",
+        "landlord_id": "b2a45448-20a2-472d-9ad8-beedb2f0a567",
+        "landlord_rating": 5,
+        "property_rating": 5,
+        "address": "5678 Broad St"
+      }
+    },
+    {
+      "id": "587e9398-9e4c-4e2f-a890-f5c9f3405c5c",
+      "type": "property",
+      "attributes": {
+        "address": "Apt. 833 7513 Kuvalis Divide, Rauburgh, NH 78610-1467",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "rating": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1517414467812-ef3dbd81859a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2NXx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "a2696565-6b39-4543-b1d3-0d3e44ff935f",
+              "type": "review"
+            },
+            {
+              "id": "9fa00d8a-0bce-46e7-960b-b3d88221204a",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ec73b0b0-93a2-48b8-8b4b-27a82a9b426f",
+      "type": "property",
+      "attributes": {
+        "address": "86692 Lueilwitz Row, Port Rod, ND 78759-3168",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "rating": 3.5,
+        "image_url": "https://images.unsplash.com/photo-1464065914911-7af1428d6436?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3MHx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "408d4664-c7fe-4ca6-80d8-d2f3f7c9a06f",
+              "type": "review"
+            },
+            {
+              "id": "25ff6ef3-38e1-47e0-9a0a-f5d2a9d63fea",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+      "type": "property",
+      "attributes": {
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "rating": 2.375,
+        "image_url": "https://images.unsplash.com/photo-1528301719638-3f517aebc11c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3NXx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "1c646483-772e-485c-b019-4eba21312768",
+              "type": "review"
+            },
+            {
+              "id": "3d99d20f-f7a8-4f38-a661-932f415a0204",
+              "type": "review"
+            },
+            {
+              "id": "d166b22e-3b7a-43bf-a41e-879d49e9d008",
+              "type": "review"
+            },
+            {
+              "id": "352465b1-097d-4d1b-97e6-1d489a1db062",
+              "type": "review"
+            },
+            {
+              "id": "fa9b68ec-e642-4dee-b592-c58ef51f226c",
+              "type": "review"
+            },
+            {
+              "id": "d2dd3892-5b59-4edb-a5c9-d9dbea232f8b",
+              "type": "review"
+            },
+            {
+              "id": "9705b9a6-df81-4db2-9ea0-588615dc9b2e",
+              "type": "review"
+            },
+            {
+              "id": "d2a26564-6505-462f-9b58-e1fb9b80544d",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "1c646483-772e-485c-b019-4eba21312768",
+      "type": "review",
+      "attributes": {
+        "content": "So cool!",
+        "rating": 4,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "3d99d20f-f7a8-4f38-a661-932f415a0204",
+      "type": "review",
+      "attributes": {
+        "content": "it was just ok",
+        "rating": 1,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "d166b22e-3b7a-43bf-a41e-879d49e9d008",
+      "type": "review",
+      "attributes": {
+        "content": "ok bro",
+        "rating": 5,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "352465b1-097d-4d1b-97e6-1d489a1db062",
+      "type": "review",
+      "attributes": {
+        "content": "doobie doobie",
+        "rating": 5,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "a2696565-6b39-4543-b1d3-0d3e44ff935f",
+      "type": "review",
+      "attributes": {
+        "content": "Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim.",
+        "rating": 2,
+        "property_id": "587e9398-9e4c-4e2f-a890-f5c9f3405c5c",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.5,
+        "address": "Apt. 833 7513 Kuvalis Divide, Rauburgh, NH 78610-1467"
+      }
+    },
+    {
+      "id": "9fa00d8a-0bce-46e7-960b-b3d88221204a",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu. Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor.",
+        "rating": 3,
+        "property_id": "587e9398-9e4c-4e2f-a890-f5c9f3405c5c",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.5,
+        "address": "Apt. 833 7513 Kuvalis Divide, Rauburgh, NH 78610-1467"
+      }
+    },
+    {
+      "id": "fa9b68ec-e642-4dee-b592-c58ef51f226c",
+      "type": "review",
+      "attributes": {
+        "content": "4th time is a charm",
+        "rating": 1,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "408d4664-c7fe-4ca6-80d8-d2f3f7c9a06f",
+      "type": "review",
+      "attributes": {
+        "content": "Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim.",
+        "rating": 3,
+        "property_id": "ec73b0b0-93a2-48b8-8b4b-27a82a9b426f",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 3.5,
+        "address": "86692 Lueilwitz Row, Port Rod, ND 78759-3168"
+      }
+    },
+    {
+      "id": "25ff6ef3-38e1-47e0-9a0a-f5d2a9d63fea",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 4,
+        "property_id": "ec73b0b0-93a2-48b8-8b4b-27a82a9b426f",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 3.5,
+        "address": "86692 Lueilwitz Row, Port Rod, ND 78759-3168"
+      }
+    },
+    {
+      "id": "d2dd3892-5b59-4edb-a5c9-d9dbea232f8b",
+      "type": "review",
+      "attributes": {
+        "content": "u suck mcfly!",
+        "rating": 1,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "9705b9a6-df81-4db2-9ea0-588615dc9b2e",
+      "type": "review",
+      "attributes": {
+        "content": " Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor. Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum.",
+        "rating": 1,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "d2a26564-6505-462f-9b58-e1fb9b80544d",
+      "type": "review",
+      "attributes": {
+        "content": "Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum. Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 1,
+        "property_id": "5863a8e5-6472-4e0c-91b1-9937e2004c7d",
+        "landlord_id": "05f054f4-cfc8-4922-9740-8d3b53467bef",
+        "landlord_rating": 2.5833333333333335,
+        "property_rating": 2.375,
+        "address": "670 Sherryl Field, East Rudymouth, AZ 93705-2393"
+      }
+    },
+    {
+      "id": "f7afc841-65f6-41eb-882a-51cd1b045769",
+      "type": "property",
+      "attributes": {
+        "address": "742 Casey Junctions, Brianastad, NE 79431",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "rating": 3.5,
+        "image_url": "https://images.unsplash.com/photo-1505280689532-4d6e119c3e84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2OXx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "f5ce8f20-1121-48d1-9253-d9088d557422",
+              "type": "review"
+            },
+            {
+              "id": "71891fb2-65bd-48f0-8b27-c6f03f765ed5",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+      "type": "property",
+      "attributes": {
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "rating": 2.75,
+        "image_url": "https://images.unsplash.com/photo-1512027407220-f0099d2ea343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2NHx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "8fdaa05f-d1d3-4271-869d-6c6ade8c9edc",
+              "type": "review"
+            },
+            {
+              "id": "bce318ce-b0d0-457a-ba2f-cde8e250e2a9",
+              "type": "review"
+            },
+            {
+              "id": "d7059535-3e1b-4eaf-bbfa-4a5504204035",
+              "type": "review"
+            },
+            {
+              "id": "710f7189-2a55-47b9-b273-554671564919",
+              "type": "review"
+            },
+            {
+              "id": "220db4f7-fa58-4cd6-986e-8124c5c35f7f",
+              "type": "review"
+            },
+            {
+              "id": "8b73db97-5b93-40e2-8f2a-dff9bd86f470",
+              "type": "review"
+            },
+            {
+              "id": "a39d9d1f-e158-4262-8a99-5a11cc1d1f01",
+              "type": "review"
+            },
+            {
+              "id": "5ecff5ea-5230-419a-bdfc-35ab6667a95b",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "d73efe94-055b-4b74-a663-e9d5a3b639e0",
+      "type": "property",
+      "attributes": {
+        "address": "Suite 116 9490 Hudson Fall, Efrainport, NY 69785-8083",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "rating": 3.5,
+        "image_url": "https://images.unsplash.com/photo-1537708802734-f1781ffb0f59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3NHx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "08fea85c-c618-4d83-b979-acac05485cbf",
+              "type": "review"
+            },
+            {
+              "id": "d9223bca-6b88-4af1-be90-2d1ceeccc2b1",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8fdaa05f-d1d3-4271-869d-6c6ade8c9edc",
+      "type": "review",
+      "attributes": {
+        "content": "hiiiiiiiiiiii",
+        "rating": 5,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "bce318ce-b0d0-457a-ba2f-cde8e250e2a9",
+      "type": "review",
+      "attributes": {
+        "content": "good bye!",
+        "rating": 1,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "d7059535-3e1b-4eaf-bbfa-4a5504204035",
+      "type": "review",
+      "attributes": {
+        "content": "hrthdrthdrthrdthdrthr",
+        "rating": 1,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "710f7189-2a55-47b9-b273-554671564919",
+      "type": "review",
+      "attributes": {
+        "content": "hi again!!!!!!",
+        "rating": 5,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "220db4f7-fa58-4cd6-986e-8124c5c35f7f",
+      "type": "review",
+      "attributes": {
+        "content": "delete me!",
+        "rating": 1,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "8b73db97-5b93-40e2-8f2a-dff9bd86f470",
+      "type": "review",
+      "attributes": {
+        "content": " Sunt irure do dolore dolore nisi id esse dolor ullamco cillum pariatur mollit consectetur. Qui ullamco enim proident aliquip irure. Nostrud et pariatur dolor aliquip dolore excepteur aute id consequat sit qui deserunt voluptate sunt. Mollit dolor officia incididunt commodo sint minim consectetur aute elit. Sint quis quis velit id ipsum do enim id commodo ut occaecat. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia. In incididunt Lorem eu amet consequat consectetur qui sunt esse duis. Pariatur id magna esse nisi quis Lorem consequat cupidatat adipisicing ut est sint laboris commodo. Do excepteur excepteur dolore in mollit tempor est et enim adipisicing id adipisicing Lorem. Minim culpa proident consectetur dolor nulla esse est nostrud magna ea. Anim ea eiusmod ad nisi consectetur.",
+        "rating": 5,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "a39d9d1f-e158-4262-8a99-5a11cc1d1f01",
+      "type": "review",
+      "attributes": {
+        "content": "Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum.",
+        "rating": 1,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "f5ce8f20-1121-48d1-9253-d9088d557422",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu. Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim.",
+        "rating": 3,
+        "property_id": "f7afc841-65f6-41eb-882a-51cd1b045769",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 3.5,
+        "address": "742 Casey Junctions, Brianastad, NE 79431"
+      }
+    },
+    {
+      "id": "71891fb2-65bd-48f0-8b27-c6f03f765ed5",
+      "type": "review",
+      "attributes": {
+        "content": "Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim. Amet esse exercitation reprehenderit nostrud enim id. Nostrud sint cupidatat elit fugiat velit enim fugiat sint occaecat esse veniam ea exercitation exercitation. Eiusmod laboris ea laborum commodo reprehenderit voluptate mollit officia irure duis mollit. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia.",
+        "rating": 4,
+        "property_id": "f7afc841-65f6-41eb-882a-51cd1b045769",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 3.5,
+        "address": "742 Casey Junctions, Brianastad, NE 79431"
+      }
+    },
+    {
+      "id": "08fea85c-c618-4d83-b979-acac05485cbf",
+      "type": "review",
+      "attributes": {
+        "content": "Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia.",
+        "rating": 5,
+        "property_id": "d73efe94-055b-4b74-a663-e9d5a3b639e0",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 3.5,
+        "address": "Suite 116 9490 Hudson Fall, Efrainport, NY 69785-8083"
+      }
+    },
+    {
+      "id": "5ecff5ea-5230-419a-bdfc-35ab6667a95b",
+      "type": "review",
+      "attributes": {
+        "content": "heheheheheheheehe",
+        "rating": 3,
+        "property_id": "e90374a9-4f63-47f2-832d-0b8f40ad182b",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 2.75,
+        "address": "Apt. 411 780 McLaughlin Prairie, Salvatoreport, MI 28902"
+      }
+    },
+    {
+      "id": "d9223bca-6b88-4af1-be90-2d1ceeccc2b1",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu. Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum.",
+        "rating": 2,
+        "property_id": "d73efe94-055b-4b74-a663-e9d5a3b639e0",
+        "landlord_id": "9f948eec-5304-4763-b9cd-9e085f4dc0ca",
+        "landlord_rating": 3,
+        "property_rating": 3.5,
+        "address": "Suite 116 9490 Hudson Fall, Efrainport, NY 69785-8083"
+      }
+    },
+    {
+      "id": "65ed87d5-5824-4339-b188-06169219be67",
+      "type": "property",
+      "attributes": {
+        "address": "7969 Schoen Forges, North Latricia, NJ 73468-5554",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "rating": 2,
+        "image_url": "https://images.unsplash.com/photo-1505128671675-4e9e5544a5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2M3x8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "7cb2a7dd-7a9c-4f4f-926b-1ea3dbbdeb05",
+              "type": "review"
+            },
+            {
+              "id": "616b33be-df80-48c5-b0a7-75e679802a35",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b826a4a8-8519-46f4-a9e4-b37c87dfe74d",
+      "type": "property",
+      "attributes": {
+        "address": "12937 Robel Isle, Kellyechester, GA 95509",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "rating": 3,
+        "image_url": "https://images.unsplash.com/photo-1461365570812-b7d5ebe71766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2OHx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "0f52c48a-6c5c-4127-a729-4d240ab038d1",
+              "type": "review"
+            },
+            {
+              "id": "e2cb6890-6931-4d3e-9db5-b22e5cdd2edd",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ce56d15e-3c62-4536-9c03-c00defeb17ef",
+      "type": "property",
+      "attributes": {
+        "address": "Apt. 845 11274 Aimee Loaf, West Marcelmouth, FL 20559-1515",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "rating": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1494028745271-bf4d3ad0e7ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3M3x8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "cf3aa162-eb19-4632-b473-100c289e234d",
+              "type": "review"
+            },
+            {
+              "id": "908ddac7-d419-46e7-b228-458c44d688ae",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "7cb2a7dd-7a9c-4f4f-926b-1ea3dbbdeb05",
+      "type": "review",
+      "attributes": {
+        "content": "Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum. Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu. Veniam ullamco deserunt sunt sint commodo esse elit ullamco. Labore do labore eu ad consectetur magna quis quis ullamco dolore in eu occaecat adipisicing. Ut tempor ad esse nulla non cupidatat enim ut qui cillum dolore sit officia. Eu incididunt ipsum aliquip dolore reprehenderit mollit qui culpa et. Esse exercitation mollit dolor aliqua ex irure. Elit reprehenderit ad proident velit nulla et magna ut.",
+        "rating": 2,
+        "property_id": "65ed87d5-5824-4339-b188-06169219be67",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 2,
+        "address": "7969 Schoen Forges, North Latricia, NJ 73468-5554"
+      }
+    },
+    {
+      "id": "616b33be-df80-48c5-b0a7-75e679802a35",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 2,
+        "property_id": "65ed87d5-5824-4339-b188-06169219be67",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 2,
+        "address": "7969 Schoen Forges, North Latricia, NJ 73468-5554"
+      }
+    },
+    {
+      "id": "0f52c48a-6c5c-4127-a729-4d240ab038d1",
+      "type": "review",
+      "attributes": {
+        "content": "Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim. Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor. Sunt irure do dolore dolore nisi id esse dolor ullamco cillum pariatur mollit consectetur. Qui ullamco enim proident aliquip irure. Nostrud et pariatur dolor aliquip dolore excepteur aute id consequat sit qui deserunt voluptate sunt. Mollit dolor officia incididunt commodo sint minim consectetur aute elit. Sint quis quis velit id ipsum do enim id commodo ut occaecat.",
+        "rating": 2,
+        "property_id": "b826a4a8-8519-46f4-a9e4-b37c87dfe74d",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 3,
+        "address": "12937 Robel Isle, Kellyechester, GA 95509"
+      }
+    },
+    {
+      "id": "e2cb6890-6931-4d3e-9db5-b22e5cdd2edd",
+      "type": "review",
+      "attributes": {
+        "content": " Veniam ullamco deserunt sunt sint commodo esse elit ullamco. Labore do labore eu ad consectetur magna quis quis ullamco dolore in eu occaecat adipisicing. Ut tempor ad esse nulla non cupidatat enim ut qui cillum dolore sit officia. Eu incididunt ipsum aliquip dolore reprehenderit mollit qui culpa et. Esse exercitation mollit dolor aliqua ex irure. Elit reprehenderit ad proident velit nulla et magna ut.",
+        "rating": 4,
+        "property_id": "b826a4a8-8519-46f4-a9e4-b37c87dfe74d",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 3,
+        "address": "12937 Robel Isle, Kellyechester, GA 95509"
+      }
+    },
+    {
+      "id": "cf3aa162-eb19-4632-b473-100c289e234d",
+      "type": "review",
+      "attributes": {
+        "content": " Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia. Veniam ullamco deserunt sunt sint commodo esse elit ullamco. Labore do labore eu ad consectetur magna quis quis ullamco dolore in eu occaecat adipisicing. Ut tempor ad esse nulla non cupidatat enim ut qui cillum dolore sit officia. Eu incididunt ipsum aliquip dolore reprehenderit mollit qui culpa et. Esse exercitation mollit dolor aliqua ex irure. Elit reprehenderit ad proident velit nulla et magna ut.",
+        "rating": 1,
+        "property_id": "ce56d15e-3c62-4536-9c03-c00defeb17ef",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 2.5,
+        "address": "Apt. 845 11274 Aimee Loaf, West Marcelmouth, FL 20559-1515"
+      }
+    },
+    {
+      "id": "908ddac7-d419-46e7-b228-458c44d688ae",
+      "type": "review",
+      "attributes": {
+        "content": " Sunt irure do dolore dolore nisi id esse dolor ullamco cillum pariatur mollit consectetur. Qui ullamco enim proident aliquip irure. Nostrud et pariatur dolor aliquip dolore excepteur aute id consequat sit qui deserunt voluptate sunt. Mollit dolor officia incididunt commodo sint minim consectetur aute elit. Sint quis quis velit id ipsum do enim id commodo ut occaecat.",
+        "rating": 4,
+        "property_id": "ce56d15e-3c62-4536-9c03-c00defeb17ef",
+        "landlord_id": "3d0c33f6-0c38-490e-9758-bb8417d733ae",
+        "landlord_rating": 2.5,
+        "property_rating": 2.5,
+        "address": "Apt. 845 11274 Aimee Loaf, West Marcelmouth, FL 20559-1515"
+      }
+    },
+    {
+      "id": "29aaf6a7-0a34-4c10-961b-6e127698a0a1",
+      "type": "property",
+      "attributes": {
+        "address": "426 Scotty Rapid, Lake Sherrellmouth, TX 13422",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "rating": 3,
+        "image_url": "https://images.unsplash.com/photo-1535078035266-a0fa7d3b8f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2Mnx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "dd2acba9-ed2d-4c90-b468-1ab4a81a3d3a",
+              "type": "review"
+            },
+            {
+              "id": "95d4c0d2-4b3b-44c1-ba31-9202203a6e0e",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6b5802d5-f8a7-40b0-bbf5-5fda3dc8d9e2",
+      "type": "property",
+      "attributes": {
+        "address": "410 Barry Cliff, West Levi, RI 04307-3508",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "rating": 3.3333333333333335,
+        "image_url": "https://images.unsplash.com/photo-1421941027568-40ab08ee5592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3Mnx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "0af2c21e-b195-4cbd-ac1e-86093414772c",
+              "type": "review"
+            },
+            {
+              "id": "c09c2ca7-fa2f-4036-80dc-916ac0fe23ba",
+              "type": "review"
+            },
+            {
+              "id": "433ff394-502b-4e42-8cbe-b8ec7c9b5a56",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+      "type": "property",
+      "attributes": {
+        "address": "594 Hilpert Trail, West Russell, NV 78314-0928",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "rating": 3.75,
+        "image_url": "https://images.unsplash.com/photo-1543053927-0f3795a46e24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2N3x8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "260f5642-5385-4c16-943b-f54d39149ca8",
+              "type": "review"
+            },
+            {
+              "id": "d3e97f7a-cfa8-40f2-a604-470ea06bc2d1",
+              "type": "review"
+            },
+            {
+              "id": "cadbdcc0-c1fc-414b-8ff7-ffcdee2c9fe7",
+              "type": "review"
+            },
+            {
+              "id": "75ed6642-c506-4b8b-b231-866e33b17874",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "0af2c21e-b195-4cbd-ac1e-86093414772c",
+      "type": "review",
+      "attributes": {
+        "content": "testing!",
+        "rating": 5,
+        "property_id": "6b5802d5-f8a7-40b0-bbf5-5fda3dc8d9e2",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.3333333333333335,
+        "address": "410 Barry Cliff, West Levi, RI 04307-3508"
+      }
+    },
+    {
+      "id": "260f5642-5385-4c16-943b-f54d39149ca8",
+      "type": "review",
+      "attributes": {
+        "content": "Hilpert trail rules!",
+        "rating": 5,
+        "property_id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.75,
+        "address": "594 Hilpert Trail, West Russell, NV 78314-0928"
+      }
+    },
+    {
+      "id": "d3e97f7a-cfa8-40f2-a604-470ea06bc2d1",
+      "type": "review",
+      "attributes": {
+        "content": "adding to the top!",
+        "rating": 5,
+        "property_id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.75,
+        "address": "594 Hilpert Trail, West Russell, NV 78314-0928"
+      }
+    },
+    {
+      "id": "dd2acba9-ed2d-4c90-b468-1ab4a81a3d3a",
+      "type": "review",
+      "attributes": {
+        "content": " Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor. Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 5,
+        "property_id": "29aaf6a7-0a34-4c10-961b-6e127698a0a1",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3,
+        "address": "426 Scotty Rapid, Lake Sherrellmouth, TX 13422"
+      }
+    },
+    {
+      "id": "95d4c0d2-4b3b-44c1-ba31-9202203a6e0e",
+      "type": "review",
+      "attributes": {
+        "content": "Ex incididunt ut dolore id non id in nostrud labore incididunt fugiat aliqua laborum. Deserunt irure anim laborum consequat et fugiat nulla nulla nulla incididunt. Dolor anim esse culpa officia ex occaecat aliquip ea aliquip eiusmod sunt. Est ut et in officia exercitation ad. Cupidatat consequat ea consequat eiusmod et do sunt proident sit commodo. Officia veniam esse commodo ullamco consectetur pariatur eu nisi magna do minim. Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia.",
+        "rating": 1,
+        "property_id": "29aaf6a7-0a34-4c10-961b-6e127698a0a1",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3,
+        "address": "426 Scotty Rapid, Lake Sherrellmouth, TX 13422"
+      }
+    },
+    {
+      "id": "cadbdcc0-c1fc-414b-8ff7-ffcdee2c9fe7",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 4,
+        "property_id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.75,
+        "address": "594 Hilpert Trail, West Russell, NV 78314-0928"
+      }
+    },
+    {
+      "id": "75ed6642-c506-4b8b-b231-866e33b17874",
+      "type": "review",
+      "attributes": {
+        "content": " Veniam ullamco deserunt sunt sint commodo esse elit ullamco. Labore do labore eu ad consectetur magna quis quis ullamco dolore in eu occaecat adipisicing. Ut tempor ad esse nulla non cupidatat enim ut qui cillum dolore sit officia. Eu incididunt ipsum aliquip dolore reprehenderit mollit qui culpa et. Esse exercitation mollit dolor aliqua ex irure. Elit reprehenderit ad proident velit nulla et magna ut. Sunt irure do dolore dolore nisi id esse dolor ullamco cillum pariatur mollit consectetur. Qui ullamco enim proident aliquip irure. Nostrud et pariatur dolor aliquip dolore excepteur aute id consequat sit qui deserunt voluptate sunt. Mollit dolor officia incididunt commodo sint minim consectetur aute elit. Sint quis quis velit id ipsum do enim id commodo ut occaecat.",
+        "rating": 1,
+        "property_id": "b245c08a-80d0-4e11-aa53-888f22ac4fa7",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.75,
+        "address": "594 Hilpert Trail, West Russell, NV 78314-0928"
+      }
+    },
+    {
+      "id": "c09c2ca7-fa2f-4036-80dc-916ac0fe23ba",
+      "type": "review",
+      "attributes": {
+        "content": " Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor. Lorem tempor amet exercitation qui tempor aliqua sit enim cillum esse. Lorem ad labore commodo id laborum culpa exercitation ullamco nulla id irure proident. Velit nulla esse qui occaecat mollit duis laboris fugiat incididunt Lorem. Deserunt excepteur pariatur proident incididunt nisi ut. Est enim eiusmod non irure deserunt quis sunt eu nostrud id cillum.",
+        "rating": 4,
+        "property_id": "6b5802d5-f8a7-40b0-bbf5-5fda3dc8d9e2",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.3333333333333335,
+        "address": "410 Barry Cliff, West Levi, RI 04307-3508"
+      }
+    },
+    {
+      "id": "433ff394-502b-4e42-8cbe-b8ec7c9b5a56",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 1,
+        "property_id": "6b5802d5-f8a7-40b0-bbf5-5fda3dc8d9e2",
+        "landlord_id": "54ff7526-a7cf-4de4-8bed-89e8cf09c950",
+        "landlord_rating": 3.4444444444444446,
+        "property_rating": 3.3333333333333335,
+        "address": "410 Barry Cliff, West Levi, RI 04307-3508"
+      }
+    },
+    {
+      "id": "75cc76f0-c8e8-44bd-b3ac-09f5744048be",
+      "type": "property",
+      "attributes": {
+        "address": "299 Bechtelar Stravenue, East Marty, NC 43361",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "rating": 2,
+        "image_url": "https://images.unsplash.com/photo-1501393254288-4287afa9d435?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2Nnx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "a1c2647a-d4f2-4b82-ac4f-115353558e27",
+              "type": "review"
+            },
+            {
+              "id": "a283ebd5-420c-4747-8110-01c48aa829e9",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "33743cce-bf9e-4d4d-a8b4-111f3c9f4d73",
+      "type": "property",
+      "attributes": {
+        "address": "4319 Wolff Run, North Rashida, ME 64739-2743",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "rating": 2.6666666666666665,
+        "image_url": "https://images.unsplash.com/photo-1512236092577-9bd0e8cf5941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw2MXx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "231ba7e9-3091-448b-be07-dcaeca9c6482",
+              "type": "review"
+            },
+            {
+              "id": "d90ea1ea-1839-4b51-a3e5-06c70b466261",
+              "type": "review"
+            },
+            {
+              "id": "2b83d1e3-a4d7-4a2a-a5c0-786b44c708ff",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+      "type": "property",
+      "attributes": {
+        "address": "Apt. 598 43477 Nader Junction, Antonburgh, MO 62881",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "rating": 4.5,
+        "image_url": "https://images.unsplash.com/photo-1535261170473-22e6c4a35c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxODE1Mjh8MHwxfHNlYXJjaHw3MXx8fGVufDB8MHx8&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit",
+        "has_image": true
+      },
+      "relationships": {
+        "reviews": {
+          "data": [
+            {
+              "id": "b2a2620c-b2e1-4532-98d8-66ef117afd90",
+              "type": "review"
+            },
+            {
+              "id": "0b771e84-30f2-4a0a-ad76-4d1ceed10793",
+              "type": "review"
+            },
+            {
+              "id": "11fca4f5-b476-448e-87ec-3da1a04dd18d",
+              "type": "review"
+            },
+            {
+              "id": "ca645c25-4df5-4e91-bcfa-81d6758504db",
+              "type": "review"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b2a2620c-b2e1-4532-98d8-66ef117afd90",
+      "type": "review",
+      "attributes": {
+        "content": "hiiiiii",
+        "rating": 5,
+        "property_id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 4.5,
+        "address": "Apt. 598 43477 Nader Junction, Antonburgh, MO 62881"
+      }
+    },
+    {
+      "id": "0b771e84-30f2-4a0a-ad76-4d1ceed10793",
+      "type": "review",
+      "attributes": {
+        "content": "here's a 4 star!!!",
+        "rating": 4,
+        "property_id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 4.5,
+        "address": "Apt. 598 43477 Nader Junction, Antonburgh, MO 62881"
+      }
+    },
+    {
+      "id": "231ba7e9-3091-448b-be07-dcaeca9c6482",
+      "type": "review",
+      "attributes": {
+        "content": " In incididunt Lorem eu amet consequat consectetur qui sunt esse duis. Pariatur id magna esse nisi quis Lorem consequat cupidatat adipisicing ut est sint laboris commodo. Do excepteur excepteur dolore in mollit tempor est et enim adipisicing id adipisicing Lorem. Minim culpa proident consectetur dolor nulla esse est nostrud magna ea. Anim ea eiusmod ad nisi consectetur. Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia.",
+        "rating": 1,
+        "property_id": "33743cce-bf9e-4d4d-a8b4-111f3c9f4d73",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 2.6666666666666665,
+        "address": "4319 Wolff Run, North Rashida, ME 64739-2743"
+      }
+    },
+    {
+      "id": "d90ea1ea-1839-4b51-a3e5-06c70b466261",
+      "type": "review",
+      "attributes": {
+        "content": "Amet esse exercitation reprehenderit nostrud enim id. Nostrud sint cupidatat elit fugiat velit enim fugiat sint occaecat esse veniam ea exercitation exercitation. Eiusmod laboris ea laborum commodo reprehenderit voluptate mollit officia irure duis mollit. Do deserunt labore cupidatat non. Labore nisi dolor dolor aute nulla in amet Lorem. Ea irure aute enim duis do dolore enim ullamco non deserunt dolor anim voluptate officia. Ex incididunt ut dolore id non id in nostrud labore incididunt fugiat aliqua laborum. Deserunt irure anim laborum consequat et fugiat nulla nulla nulla incididunt. Dolor anim esse culpa officia ex occaecat aliquip ea aliquip eiusmod sunt. Est ut et in officia exercitation ad. Cupidatat consequat ea consequat eiusmod et do sunt proident sit commodo. Officia veniam esse commodo ullamco consectetur pariatur eu nisi magna do minim.",
+        "rating": 2,
+        "property_id": "33743cce-bf9e-4d4d-a8b4-111f3c9f4d73",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 2.6666666666666665,
+        "address": "4319 Wolff Run, North Rashida, ME 64739-2743"
+      }
+    },
+    {
+      "id": "a1c2647a-d4f2-4b82-ac4f-115353558e27",
+      "type": "review",
+      "attributes": {
+        "content": " Sunt irure do dolore dolore nisi id esse dolor ullamco cillum pariatur mollit consectetur. Qui ullamco enim proident aliquip irure. Nostrud et pariatur dolor aliquip dolore excepteur aute id consequat sit qui deserunt voluptate sunt. Mollit dolor officia incididunt commodo sint minim consectetur aute elit. Sint quis quis velit id ipsum do enim id commodo ut occaecat.",
+        "rating": 2,
+        "property_id": "75cc76f0-c8e8-44bd-b3ac-09f5744048be",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 2,
+        "address": "299 Bechtelar Stravenue, East Marty, NC 43361"
+      }
+    },
+    {
+      "id": "a283ebd5-420c-4747-8110-01c48aa829e9",
+      "type": "review",
+      "attributes": {
+        "content": " In incididunt Lorem eu amet consequat consectetur qui sunt esse duis. Pariatur id magna esse nisi quis Lorem consequat cupidatat adipisicing ut est sint laboris commodo. Do excepteur excepteur dolore in mollit tempor est et enim adipisicing id adipisicing Lorem. Minim culpa proident consectetur dolor nulla esse est nostrud magna ea. Anim ea eiusmod ad nisi consectetur. Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim.",
+        "rating": 2,
+        "property_id": "75cc76f0-c8e8-44bd-b3ac-09f5744048be",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 2,
+        "address": "299 Bechtelar Stravenue, East Marty, NC 43361"
+      }
+    },
+    {
+      "id": "11fca4f5-b476-448e-87ec-3da1a04dd18d",
+      "type": "review",
+      "attributes": {
+        "content": "Mollit minim cupidatat voluptate aute aliquip sint. Aute commodo consequat laborum proident laborum occaecat eiusmod proident. Proident sunt incididunt veniam esse nulla laborum anim. Id non do cupidatat adipisicing ut cillum culpa consectetur. Sint minim adipisicing ipsum reprehenderit fugiat. Tempor esse qui enim deserunt anim laboris. Amet irure proident ullamco velit do esse ullamco nisi id excepteur amet ut dolor ut. Nisi deserunt pariatur cillum velit aute proident anim sit tempor eu voluptate. Labore enim enim aute tempor. Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu.",
+        "rating": 5,
+        "property_id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 4.5,
+        "address": "Apt. 598 43477 Nader Junction, Antonburgh, MO 62881"
+      }
+    },
+    {
+      "id": "ca645c25-4df5-4e91-bcfa-81d6758504db",
+      "type": "review",
+      "attributes": {
+        "content": "Veniam do culpa ex laborum labore excepteur amet dolore commodo. Do ex pariatur eu nostrud. Occaecat ullamco eu ad qui eu. Veniam ullamco deserunt sunt sint commodo esse elit ullamco. Labore do labore eu ad consectetur magna quis quis ullamco dolore in eu occaecat adipisicing. Ut tempor ad esse nulla non cupidatat enim ut qui cillum dolore sit officia. Eu incididunt ipsum aliquip dolore reprehenderit mollit qui culpa et. Esse exercitation mollit dolor aliqua ex irure. Elit reprehenderit ad proident velit nulla et magna ut.",
+        "rating": 4,
+        "property_id": "70f408c2-51b9-44bc-808e-112a3b7f23b8",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 4.5,
+        "address": "Apt. 598 43477 Nader Junction, Antonburgh, MO 62881"
+      }
+    },
+    {
+      "id": "2b83d1e3-a4d7-4a2a-a5c0-786b44c708ff",
+      "type": "review",
+      "attributes": {
+        "content": "pretty cool place!",
+        "rating": 5,
+        "property_id": "33743cce-bf9e-4d4d-a8b4-111f3c9f4d73",
+        "landlord_id": "756bc528-a111-4c51-a12a-f7170f33f76d",
+        "landlord_rating": 3.3333333333333335,
+        "property_rating": 2.6666666666666665,
+        "address": "4319 Wolff Run, North Rashida, ME 64739-2743"
+      }
+    }
+  ]
+}
