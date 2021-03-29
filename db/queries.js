@@ -4,7 +4,7 @@ const pool = new Pool({
 })
 
 const getLandlords = (request, response) => {
-  pool.query("SELECT * FROM landlords", (error, results) => {
+  pool.query("SELECT * FROM landlords ORDER BY created_at DESC", (error, results) => {
     if (error) {
       throw error
     }
