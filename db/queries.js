@@ -1,4 +1,5 @@
 const Pool = require('pg').Pool
+const LandlordSerializer = require("../serializers/landlords.serializer")
 const pool = new Pool({
   database: "rate_your_landlord_backend_development"
 })
@@ -8,7 +9,8 @@ const getLandlords = (request, response) => {
     if (error) {
       throw error
     }
-    response.status(200).json(results.rows)
+    const jsonapi = LandlordSerializer.serialize(results.rows)
+    response.status(200).send(jsonapi)
   })
 }
 
