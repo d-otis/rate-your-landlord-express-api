@@ -17,7 +17,8 @@ const getLandlordById = (request, response) => {
     if (error) {
       throw error
     }
-    response.status(200).json(results.rows)
+    const jsonapi = LandlordSerializer.serialize(results.rows)
+    response.status(200).send(jsonapi)
   })
 }
 
