@@ -1,8 +1,5 @@
-const Pool = require('pg').Pool
+const pool = require('./pool')
 const LandlordSerializer = require("../serializers/landlords.serializer")
-const pool = new Pool({
-  database: "rate_your_landlord_backend_development"
-})
 
 const getLandlords = (request, response) => {
   pool.query("SELECT * FROM landlords ORDER BY created_at DESC", (error, results) => {
