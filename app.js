@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const landlordsRouter = require('./routes/landlords')
-const propertiesRouter = require('./routes/properties')
+var usersRouter = require('./routes/users.routes');
+const landlordsRouter = require('./routes/landlords.routes')
+const propertiesRouter = require('./routes/properties.routes')
 
 var app = express();
 
