@@ -6,8 +6,26 @@ const getLandlords = (request, response) => {
     if (error) {
       throw error
     }
-    const jsonapi = LandlordSerializer.serialize(results.rows)
-    response.status(200).send(jsonapi)
+
+    const landlords = results.rows
+    console.log(`getLandlords() returning ${results.rowCount} records`)
+
+    pool.query("SELECT * FROM properties ORDER BY created_at DESC", (error, results) => {
+      if (error) {
+        throw error
+      }
+      const properties = results.rows
+      console.log(`getProperties() returning ${results.rowCount} records`)
+      let landlordsResult = landlords.map(landlord => {
+        return {...landlord, properties: []}
+      })
+
+      properties.forEach(property => {
+        const idx = landlordsResult.findIndex(ll => ll.id === property.landlord_id)
+        landlordsResult[idx].properties.push(property)
+      })
+      response.status(200).send(LandlordSerializer.serialize(landlordsResult))
+    })
   })
 }
 
