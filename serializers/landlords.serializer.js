@@ -1,6 +1,16 @@
 const JSONAPISerializer = require('jsonapi-serializer').Serializer
 
 module.exports = new JSONAPISerializer("landlord", {
-  attributes: ["id", "name", "rating", "image_url", "created_at"],
-  keyForAttribute: "underscore_case"
+  attributes: ["id", "name", "rating", "image_url", "created_at", "properties"],
+  keyForAttribute: "underscore_case",
+  properties: {
+    ref: "id",
+    attributes: ["address", "created_at", "image_url", "rating", "landlord_id"],
+  },
+  pluralizeType: false,
+  typeForAttribute: (attribute) => {
+    if (attribute === "properties") {
+      return "property"
+    }
+  }
 })
