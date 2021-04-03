@@ -7,4 +7,6 @@
 ## Todo
 
 - normalize JSON response so that it mirrors what rails backend serves
+  - start with trying to roll my own
+  - after that use Sequelize :-)
   
