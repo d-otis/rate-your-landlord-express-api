@@ -13,8 +13,16 @@ module.exports = new JSONAPISerializer("landlord", {
   },
   pluralizeType: false,
   typeForAttribute: (attribute) => {
-    if (attribute === "properties") {
-      return "property"
+    // if (attribute === "properties") {
+    //   return "property"
+    // }
+    switch (attribute) {
+      case "properties":
+        return "property"
+      case "reviews":
+        return "review"
+      default:
+        return undefined
     }
   }
 })
