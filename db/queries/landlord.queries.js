@@ -24,7 +24,27 @@ const getLandlords = (request, response) => {
         const idx = landlordsResult.findIndex(ll => ll.id === property.landlord_id)
         landlordsResult[idx].properties.push(property)
       })
-      response.status(200).send(LandlordSerializer.serialize(landlordsResult))
+
+      pool.query("SELECT * FROM reviews ORDER BY created_at DESC", (error, results) => {
+        if (error) {
+          throw error
+        }
+        const allReviews = results.rows
+        allReviews.forEach(review => {
+          landlordsResult.forEach(landlord => {
+            for (const prop in landlord) {
+              if (prop === "properties") {
+                for (let property of landlord[prop]) {
+                  if (property.id === review.property_id) {
+                    landlord.reviews.push(review)
+                  }
+                }
+              }
+            }
+          })
+        })
+        response.status(200).send(LandlordSerializer.serialize(landlordsResult))
+      })
     })
   })
 }
