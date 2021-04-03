@@ -17,7 +17,7 @@ const getLandlords = (request, response) => {
       const properties = results.rows
       console.log(`getProperties() returning ${results.rowCount} records`)
       let landlordsResult = landlords.map(landlord => {
-        return {...landlord, properties: []}
+        return {...landlord, properties: [], reviews: []}
       })
 
       properties.forEach(property => {
