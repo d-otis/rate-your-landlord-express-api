@@ -35,8 +35,15 @@ const getLandlordById = (request, response) => {
     if (error) {
       throw error
     }
-    const jsonapi = LandlordSerializer.serialize(results.rows)
-    response.status(200).send(jsonapi)
+    const landlord = results.rows[0]
+
+    pool.query("SELECT * FROM properties WHERE properties.landlord_id = $1", [id], (err, res) => {
+      if (err) {
+        throw err
+      }
+      landlord.properties = res.rows
+      response.status(200).send(LandlordSerializer.serialize(landlord))
+    })
   })
 }
 
