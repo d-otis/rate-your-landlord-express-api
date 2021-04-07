@@ -10,3 +10,4 @@
   - start with trying to roll my own
   - after that use Sequelize :-)
   - refactor project structure to mirror node-pg documentation?
+  - add extra hacky attrs to reviews JSON
