@@ -1,4 +1,5 @@
 const JSONAPISerializer = require('jsonapi-serializer').Serializer
+const { pluralFix } = require('../db/util')
 
 module.exports = new JSONAPISerializer("landlord", {
   attributes: ["id", "name", "rating", "image_url", "created_at", "properties", "reviews"],
@@ -12,14 +13,5 @@ module.exports = new JSONAPISerializer("landlord", {
     attributes: ["content", "rating", "property_id"]
   },
   pluralizeType: false,
-  typeForAttribute: (attribute) => {
-    switch (attribute) {
-      case "properties":
-        return "property"
-      case "reviews":
-        return "review"
-      default:
-        return undefined
-    }
-  }
+  typeForAttribute: pluralFix
 })
