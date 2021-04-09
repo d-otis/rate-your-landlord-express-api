@@ -11,3 +11,4 @@
   - after that use Sequelize :-)
   - refactor project structure to mirror node-pg documentation?
   - add extra hacky attrs to reviews JSON
+  - POST/PATCH/DELETE routes bruh
