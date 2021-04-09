@@ -67,6 +67,15 @@ const getLandlordById = (request, response) => {
   })
 }
 
+const createLandlord = (request, response) => {
+  const { name, image_url } = request.body
+  const createdAt = new Date()
+  const updatedAt = createdAt
+
+  console.log(request.body)
+  // pool.query("INSERT INTO landlords(name, rating, image_url, created_at)", [])
+}
+
 module.exports = {
   getLandlords,
   getLandlordById
