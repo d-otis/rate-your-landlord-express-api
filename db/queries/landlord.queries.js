@@ -78,5 +78,9 @@ const createLandlord = (request, response) => {
 
 module.exports = {
   getLandlords,
-  getLandlordById
+  getLandlordById,
+  createLandlord
 }
+
+// From Rails' ActiveRecord ORM on POST
+// INSERT INTO "landlords" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Howdy Doody"], ["created_at", "2021-04-09 01:10:50.580297"], ["updated_at", "2021-04-09 01:10:50.580297"], ["image_url", "https://images.unsplash.com/photo-1617120279904-e0216ef0e0b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxODE1Mjh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTc5MzA2NTA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=rate_your_landlord&utm_medium=referral&utm_campaign=api-credit"]]
