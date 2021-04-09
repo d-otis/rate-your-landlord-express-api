@@ -22,11 +22,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const versionOneRoute = "/api/v1"
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/landlords', landlordsRouter);
-app.use("/properties", propertiesRouter);
-app.use("/reviews", reviewsRouter);
+app.use(`${versionOneRoute}/landlords`, landlordsRouter);
+app.use(`${versionOneRoute}/properties`, propertiesRouter);
+app.use(`${versionOneRoute}/reviews`, reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
