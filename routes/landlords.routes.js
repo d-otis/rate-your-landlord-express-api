@@ -4,5 +4,6 @@ const db = require('../db/queries')
 
 router.get("/", db.getLandlords)
 router.get("/:id", db.getLandlordById)
+router.post("/", db.createLandlord)
 
 module.exports = router
