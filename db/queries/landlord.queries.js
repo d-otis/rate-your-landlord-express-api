@@ -84,7 +84,7 @@ const createLandlord = (request, response) => {
 const deleteLandlord = (request, response) => {
   const { id } = request.params
 
-  pool.query("DELETE FROM landlords WHERE landlords.id = $1 RETURNING *", [id], (error, result) => {
+  pool.query("DELETE FROM landlords WHERE id = $1 RETURNING *", [id], (error, result) => {
     if (error) {
       throw error
     }
