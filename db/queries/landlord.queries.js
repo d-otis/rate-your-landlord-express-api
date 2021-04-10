@@ -76,7 +76,8 @@ const createLandlord = (request, response) => {
     if (error) {
       throw error
     }
-    response.send(result.rows[0])
+
+    response.status(200).send(LandlordSerializer.serialize(result.rows[0]))
   })
   
 }
