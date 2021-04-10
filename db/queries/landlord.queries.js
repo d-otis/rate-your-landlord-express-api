@@ -79,13 +79,25 @@ const createLandlord = (request, response) => {
 
     response.status(200).send(LandlordSerializer.serialize(result.rows[0]))
   })
-  
+}
+
+const deleteLandlord = (request, response) => {
+  const { id } = request.params
+
+  pool.query("DELETE FROM landlords WHERE landlords.id = $1 RETURNING *", [id], (error, result) => {
+    if (error) {
+      throw error
+    }
+    // then find matching reviews and properties and delete
+    response.status(200).send(LandlordSerializer.serialize(result.rows[0]))
+  })
 }
 
 module.exports = {
   getLandlords,
   getLandlordById,
-  createLandlord
+  createLandlord,
+  deleteLandlord
 }
 
 // From Rails' ActiveRecord ORM on POST
