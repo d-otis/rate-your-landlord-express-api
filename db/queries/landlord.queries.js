@@ -88,8 +88,27 @@ const deleteLandlord = (request, response) => {
     if (error) {
       throw error
     }
-    // then find matching reviews and properties and delete
-    response.status(200).send(LandlordSerializer.serialize(result.rows[0]))
+    const deletedLandlord = result.rows[0]
+    deletedLandlord.properties = []
+    deletedLandlord.reviews = []
+
+    pool.query("DELETE FROM properties WHERE landlord_id = $1 RETURNING *", [id], (error, result) => {
+      if (error) {
+        throw error
+      }
+      const deletedProperties = result.rows
+      deletedLandlord.properties.push(...deletedProperties)
+      const propertyUuids = deletedProperties.map(p => p.id)
+      
+      pool.query("DELETE FROM reviews WHERE property_id = ANY($1::uuid[]) RETURNING *", [propertyUuids], (error, results) => {
+        if (error) {
+          throw error
+        }
+        const deletedReviews = results.rows
+        deletedLandlord.reviews.push(...deletedReviews)
+        response.status(200).send(LandlordSerializer.serialize(deletedLandlord))
+      })
+    })
   })
 }
 
