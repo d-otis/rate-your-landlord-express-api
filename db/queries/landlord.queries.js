@@ -72,8 +72,13 @@ const createLandlord = (request, response) => {
   const createdAt = new Date()
   const updatedAt = createdAt
 
-  console.log(request.body)
-  // pool.query("INSERT INTO landlords(name, rating, image_url, created_at)", [])
+  pool.query("INSERT INTO landlords(name, image_url, created_at, updated_at) VALUES($1, $2, $3, $4) RETURNING *", [name, image_url, createdAt, updatedAt], (error, result) => {
+    if (error) {
+      response.send(error)
+    }
+    response.send(result.rows[0])
+  })
+  
 }
 
 module.exports = {
