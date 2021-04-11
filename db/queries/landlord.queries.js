@@ -73,18 +73,23 @@ const getLandlordById = async (request, response) => {
   }
 }
 
-const createLandlord = (request, response) => {
+const createLandlord = async (request, response) => {
   const { name, image_url } = request.body
   const createdAt = new Date()
   const updatedAt = createdAt
 
-  pool.query("INSERT INTO landlords(name, image_url, created_at, updated_at) VALUES($1, $2, $3, $4) RETURNING id, name, image_url, created_at, rating", [name, image_url, createdAt, updatedAt], (error, result) => {
-    if (error) {
-      throw error
-    }
+  const createLandlordQueryText = `INSERT INTO landlords(name, image_url, created_at, updated_at) 
+                                  VALUES($1, $2, $3, $4) 
+                                  RETURNING id, name, image_url, created_at, updated_at, rating`
 
-    response.status(200).send(LandlordSerializer.serialize(result.rows[0]))
-  })
+  try {
+    const landlordResponse = await pool.query(createLandlordQueryText, [name, image_url, createdAt, updatedAt])
+    const rawLandlord = landlordResponse.rows[0]
+    response.status(200).send(LandlordSerializer.serialize(rawLandlord))
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
+  }
 }
 
 const deleteLandlord = (request, response) => {
