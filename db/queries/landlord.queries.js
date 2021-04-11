@@ -1,5 +1,6 @@
 const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
+const { serverError } = require('../util')
 
 const getLandlords = (request, response) => {
   pool.query("SELECT * FROM landlords ORDER BY created_at DESC", (error, results) => {
@@ -49,22 +50,27 @@ const getLandlords = (request, response) => {
   })
 }
 
-const getLandlordById = (request, response) => {
+const getLandlordById = async (request, response) => {
+  const getLandlordQueryText = "SELECT * FROM landlords WHERE id = $1"
+  const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
+  
   const id = request.params.id
-  pool.query("SELECT * FROM landlords WHERE id = $1", [id], (error, results) => {
-    if (error) {
-      throw error
-    }
-    const landlord = results.rows[0]
 
-    pool.query("SELECT * FROM properties WHERE properties.landlord_id = $1", [id], (err, res) => {
-      if (err) {
-        throw err
-      }
-      landlord.properties = res.rows
-      response.status(200).send(LandlordSerializer.serialize(landlord))
-    })
-  })
+  try {
+    const landlordResponse = await pool.query(getLandlordQueryText, [id])
+    const rawLandlord = landlordResponse.rows[0]
+
+    const ownedPropertiesResponse = await pool.query(getOwnedPropertiesQueryText, [id])
+    const rawProperties = ownedPropertiesResponse.rows
+
+    rawLandlord.properties = rawProperties
+
+    response.status(200).send(LandlordSerializer.serialize(rawLandlord))
+
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
+  }
 }
 
 const createLandlord = (request, response) => {
