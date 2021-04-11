@@ -13,3 +13,4 @@
   - refactor queries as async/await, or Promsise? Callbacks are hideous here...
   - add extra hacky attrs to reviews JSON
   - POST/PATCH/DELETE routes bruh
+  - set random image for landlord from UNSPLASH like RoR
