@@ -11,6 +11,7 @@ const getReviews = async (request, response) => {
     response.status(200).send(ReviewsSerializer.serialize(rawReviews))
   } catch (error) {
     console.log(error)
+    response.status(500).send({ error: "there was an error - check the logs" })
   }
 }
 
