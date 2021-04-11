@@ -9,6 +9,9 @@ const pluralFix = (attribute) => {
   }
 }
 
+const serverError = { error: "there was an error - check the logs" }
+
 module.exports = {
-  pluralFix
+  pluralFix,
+  serverError
 }
