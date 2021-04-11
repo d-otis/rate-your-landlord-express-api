@@ -2,31 +2,34 @@ const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
 
-const getProperties = (request, response) => {
-  pool.query("SELECT * FROM properties ORDER BY created_at DESC", (error, results) => {
-    if (error) {
-      throw error
-    }
-    const properties = results.rows
+const getProperties = async (request, response) => {
+  const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
+  const reviewsQueryText = "SELECT * FROM reviews ORDER BY created_at DESC"
 
-    console.log(`getProperties() returning ${results.rowCount} records`)
+  try {
+    // 1. Query Properties:
+    const propertiesResponse = await pool.query(propertiesQueryText)
+    let rawProperties = propertiesResponse.rows
+    console.log(`getProperties() started: returning ${propertiesResponse.rowCount} rows`)
 
-    pool.query("SELECT * FROM reviews ORDER BY created_at DESC", (error, results) => {
-      const reviews = results.rows
-      console.log(`reviews returned ${results.rowCount} records`)
-      const propertiesResult = properties.map(property => {
-        return {...property, reviews: []}
-      })
-      
-      reviews.forEach(review => {
-        const idx = propertiesResult.findIndex(property => property.id === review.property_id)
+    rawProperties = [...rawProperties.map(property => ({ ...property, reviews: [] })) ]
 
-        propertiesResult[idx].reviews.push(review)
-      })
-      console.log(PropertySerializer)
-      response.status(200).send(PropertySerializer.serialize(propertiesResult))
+    // 1. Query Reviews:
+    const reviewsResponse = await pool.query(reviewsQueryText)
+    let rawReviews = reviewsResponse.rows
+    console.log(`reviews returned ${reviewsResponse.rowCount} records`)
+
+    rawReviews.forEach(review => {
+      const idx = rawProperties.findIndex(property => property.id === review.property_id)
+      rawProperties[idx].reviews.push(review)
     })
-  })
+
+    response.status(200).send(PropertySerializer.serialize(rawProperties))
+    
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
+  }
 }
 
 module.exports = {
