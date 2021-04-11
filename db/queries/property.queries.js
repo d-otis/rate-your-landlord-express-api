@@ -1,5 +1,6 @@
 const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
+const { serverError } = require('../util')
 
 const getProperties = (request, response) => {
   pool.query("SELECT * FROM properties ORDER BY created_at DESC", (error, results) => {
