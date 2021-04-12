@@ -92,35 +92,39 @@ const createLandlord = async (request, response) => {
   }
 }
 
-const deleteLandlord = (request, response) => {
+const deleteLandlord = async (request, response) => {
   const { id } = request.params
 
-  pool.query("DELETE FROM landlords WHERE id = $1 RETURNING *", [id], (error, result) => {
-    if (error) {
-      throw error
-    }
-    const deletedLandlord = result.rows[0]
-    deletedLandlord.properties = []
-    deletedLandlord.reviews = []
+  const deleteLandlordQueryText = "DELETE FROM landlords WHERE id = $1 RETURNING *"
+  const deletePropertiesQueryText = "DELETE FROM properties WHERE landlord_id = $1 RETURNING *"
+  const deleteReviewsQueryText = "DELETE FROM reviews WHERE property_id = ANY($1::uuid[]) RETURNING *"
 
-    pool.query("DELETE FROM properties WHERE landlord_id = $1 RETURNING *", [id], (error, result) => {
-      if (error) {
-        throw error
-      }
-      const deletedProperties = result.rows
-      deletedLandlord.properties.push(...deletedProperties)
-      const propertyUuids = deletedProperties.map(p => p.id)
-      
-      pool.query("DELETE FROM reviews WHERE property_id = ANY($1::uuid[]) RETURNING *", [propertyUuids], (error, results) => {
-        if (error) {
-          throw error
-        }
-        const deletedReviews = results.rows
-        deletedLandlord.reviews.push(...deletedReviews)
-        response.status(200).send(LandlordSerializer.serialize(deletedLandlord))
-      })
-    })
-  })
+  try {
+    // DELETE LANDLORDS
+    const landlordsResponse = await pool.query(deleteLandlordQueryText, [id])
+    const deletedLandlord = landlordsResponse.rows[0]
+
+    // ADD NECESSARY reviews/properties array
+    deletedLandlord.reviews = []
+    deletedLandlord.properties = []
+
+    // DELETE PROPERTIES
+    const propertiesResponse = await pool.query(deletePropertiesQueryText, [id])
+    const deletedProperties = propertiesResponse.rows
+    deletedLandlord.properties.push(...deletedProperties)
+    const propertiesUuids = deletedProperties.map(p => p.id)
+
+    // DELETE REVIEWS
+    const reviewsResponse = await pool.query(deleteReviewsQueryText, [propertiesUuids])
+    const deletedReviews = reviewsResponse.rows
+    deletedLandlord.reviews.push(...deletedReviews)
+
+    response.status(500).send(LandlordSerializer.serialize(deletedLandlord))
+
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(LandlordSerializer.serialize(serverError))
+  }
 }
 
 module.exports = {
