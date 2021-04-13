@@ -2,52 +2,50 @@ const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
 
-const getLandlords = (request, response) => {
-  pool.query("SELECT * FROM landlords ORDER BY created_at DESC", (error, results) => {
-    if (error) {
-      throw error
-    }
+const getLandlords = async (request, response) => {
+  const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
+  const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
+  const reviewsQueryText = "SELECT * FROM reviews ORDER BY created_at DESC"
 
-    const landlords = results.rows
-    console.log(`getLandlords() returning ${results.rowCount} records`)
+  try {
+    // GET LANDLORDS
+    const landlordsResponse = await pool.query(landlordsQueryText)
+    const landlords = landlordsResponse.rows.map(landlord => ({ ...landlord, properties: [], reviews: [] }))
 
-    pool.query("SELECT * FROM properties ORDER BY created_at DESC", (error, results) => {
-      if (error) {
-        throw error
-      }
-      const properties = results.rows
-      console.log(`getProperties() returning ${results.rowCount} records`)
-      let landlordsResult = landlords.map(landlord => {
-        return {...landlord, properties: [], reviews: []}
-      })
+    // GET PROPERTIES
+    const propertiesResponse = await pool.query(propertiesQueryText)
+    const properties = propertiesResponse.rows
 
-      properties.forEach(property => {
-        const idx = landlordsResult.findIndex(ll => ll.id === property.landlord_id)
-        landlordsResult[idx].properties.push(property)
-      })
+    // ATTACH OWNED PROPERTIES TO RESPECTIVE LANDLORDS
+    properties.forEach(property => {
+      const idx = landlords.findIndex(ll => ll.id === property.landlord_id)
+      landlords[idx].properties.push(property)
+    })
 
-      pool.query("SELECT * FROM reviews ORDER BY created_at DESC", (error, results) => {
-        if (error) {
-          throw error
-        }
-        const allReviews = results.rows
-        allReviews.forEach(review => {
-          landlordsResult.forEach(landlord => {
-            for (const prop in landlord) {
-              if (prop === "properties") {
-                for (let property of landlord[prop]) {
-                  if (property.id === review.property_id) {
-                    landlord.reviews.push(review)
-                  }
-                }
+    // GET REVIEWS
+    const reviewsResponse = await pool.query(reviewsQueryText)
+    const reviews = reviewsResponse.rows
+
+    // PUSH THE OWNED REVIEWS ONTO RESPECTIVE PROPERTIES
+    reviews.forEach(review => {
+      landlords.forEach(landlord => {
+        for (const prop in landlord) {
+          if (prop === "properties") {
+            for (let property of landlord[prop]) {
+              if (property.id === review.property_id) {
+                landlord.reviews.push(review)
               }
             }
-          })
-        })
-        response.status(200).send(LandlordSerializer.serialize(landlordsResult))
+          }
+        }
       })
     })
-  })
+
+    response.status(400).send(LandlordSerializer.serialize(landlords))
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
+  }
 }
 
 const getLandlordById = async (request, response) => {
