@@ -153,7 +153,7 @@ const deleteLandlord = async (request, response) => {
 
   } catch (error) {
     console.log(error)
-    response.status(500).send(LandlordSerializer.serialize(serverError))
+    response.status(500).send(serverError)
   }
 }
 
