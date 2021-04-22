@@ -13,3 +13,9 @@
   - add extra hacky attrs to reviews JSON
   - POST/PATCH/DELETE routes bruh
   - set random image for landlord from UNSPLASH like RoR
+
+### Refactoring Queries
+
+1. return raw nested objects from helper functions into variables
+2. modify by adding associations if applicable
+3. pass those into response.send()
