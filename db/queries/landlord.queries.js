@@ -93,6 +93,35 @@ const createLandlord = async (request, response) => {
   }
 }
 
+const updateLandlord = async (request, response) => {
+  const { id } = request.params
+  const { name, image_url } = request.body
+  const updatedAt = new Date()
+
+  console.log({id, name, image_url, updatedAt})
+
+  const updateLandlordQueryText = `UPDATE landlords
+                                  SET name = $1, image_url = $2, updated_at = $3
+                                  WHERE id = $4
+                                  RETURNING id, name, image_url, created_at, updated_at, rating`
+
+const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
+
+  try {
+    const updatedLandlordResponse = await pool.query(updateLandlordQueryText, [name, image_url, updatedAt, id])
+    const updatedLandlord = updatedLandlordResponse.rows[0]
+
+    const ownedPropertiesResponse = await pool.query(getOwnedPropertiesQueryText, [id])
+    const rawProperties = ownedPropertiesResponse.rows
+
+    updatedLandlord.properties = rawProperties
+
+    response.status(200).send(LandlordSerializer.serialize(updatedLandlord))
+  } catch (error) {
+    response.status(500).send(serverError)
+  }
+}
+
 const deleteLandlord = async (request, response) => {
   const { id } = request.params
 
@@ -132,6 +161,7 @@ module.exports = {
   getLandlords,
   getLandlordById,
   createLandlord,
+  updateLandlord,
   deleteLandlord
 }
 
