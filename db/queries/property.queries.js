@@ -32,6 +32,27 @@ const getProperties = async (request, response) => {
   }
 }
 
+const createProperty = async (request, response) => {
+  const { address, image_url, landlord_id } = request.body
+  const createdAt = new Date(), updatedAt = createdAt
+
+  const createPropertyQueryText = `INSERT INTO properties(address, image_url, landlord_id, created_at, updated_at)
+                                  VALUES($1, $2, $3, $4, $5)
+                                  RETURNING id, address, image_url, created_at, updated_at, rating, landlord_id`
+
+    try {
+      const propertyResponse = await pool.query(createPropertyQueryText, [address, image_url, landlord_id, createdAt, updatedAt])
+      const createdProperty = propertyResponse.rows[0]
+
+      response.status(200).send(PropertySerializer.serialize(createdProperty))
+    } catch (error) {
+      response.status(200).send(error)
+    }
+
+  
+}
+
 module.exports = {
-  getProperties
+  getProperties,
+  createProperty
 }
