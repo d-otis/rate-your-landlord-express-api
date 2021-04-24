@@ -105,7 +105,7 @@ const updateLandlord = async (request, response) => {
                                   WHERE id = $4
                                   RETURNING id, name, image_url, created_at, updated_at, rating`
 
-const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
+  const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
 
   try {
     const updatedLandlordResponse = await pool.query(updateLandlordQueryText, [name, image_url, updatedAt, id])
