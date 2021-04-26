@@ -1,5 +1,5 @@
 const { getLandlords, getLandlordById, createLandlord, updateLandlord, deleteLandlord } = require('./landlord.queries')
-const { getProperties, createProperty } = require('./property.queries')
+const { getProperties, createProperty, updateProperty } = require('./property.queries')
 const { getReviews } = require('./reviews.queries')
 
 module.exports = {
@@ -10,5 +10,6 @@ module.exports = {
   deleteLandlord,
   getProperties,
   createProperty,
+  updateProperty,
   getReviews
 }
