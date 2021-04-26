@@ -48,8 +48,6 @@ const createProperty = async (request, response) => {
     } catch (error) {
       response.status(200).send(error)
     }
-
-  
 }
 
 module.exports = {
