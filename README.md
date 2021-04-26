@@ -7,13 +7,14 @@
 ## Todo
 
 - normalize JSON response so that it mirrors what rails backend serves
-  - start with trying to roll my own
-  - after that use Sequelize :-)
-  - refactor project structure to mirror node-pg documentation?
-  - add extra hacky attrs to reviews JSON
-  - POST/PATCH/DELETE routes bruh
-  - set random image for landlord from UNSPLASH like RoR
-  - hacky landlord rating and property updates when reviews are created
+- start with trying to roll my own
+- after that use Sequelize :-)
+- refactor project structure to mirror node-pg documentation?
+- add extra hacky attrs to reviews JSON
+- POST/PATCH/DELETE routes bruh
+- set random image for landlord from UNSPLASH like RoR
+- hacky landlord rating and property updates when reviews are created
+- make sure adding review => updates ratings for landlord and property
 
 ### Refactoring Queries
 
