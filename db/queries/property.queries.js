@@ -50,7 +50,34 @@ const createProperty = async (request, response) => {
     }
 }
 
+const updateProperty = async (request, response) => {
+  const { id } = request.params
+  const { address, imageUrl } = request.body
+  const updatedAt = new Date()
+
+  const updatePropertyQueryText = `UPDATE properties
+                                  SET address = $1, image_url = $2, updated_at = $3
+                                  WHERE id = $4
+                                  RETURNING id, address, image_url, rating, created_at, updated_at, landlord_id`
+  // 
+  const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
+  try {
+    const updatedPropertyResponse = await pool.query(updatePropertyQueryText, [address, imageUrl, updatedAt, id])
+    const updatedProperty = updatedPropertyResponse.rows[0]
+
+    const ownedReviewsResponse = await pool.query(getOwnedReviewsQueryText, [id])
+    const ownedReviews = ownedReviewsResponse.rows
+
+    updatedProperty.reviews = ownedReviews
+
+    response.status(200).send(PropertySerializer.serialize(updatedProperty))
+  } catch (error) {
+    response.status(500).send(serverError)
+  }    
+}
+
 module.exports = {
   getProperties,
-  createProperty
+  createProperty,
+  updateProperty
 }
