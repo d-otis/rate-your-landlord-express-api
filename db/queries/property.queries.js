@@ -76,8 +76,28 @@ const updateProperty = async (request, response) => {
   }    
 }
 
+const deleteProperty = async (request, response) => {
+  const { id } = request.params
+
+  const deletePropertyQueryText = `DELETE FROM properties WHERE id = $1 RETURNING *`
+  const deleteReviewsQueryText = `DELETE FROM reviews WHERE property_id = $1 RETURNING *`
+
+  try {
+    const propertyResponse = await pool.query(deletePropertyQueryText, [id])
+    const deletedProperty = propertyResponse.rows[0] 
+
+    const reviewsResponse = await pool.query(deleteReviewsQueryText, [id])
+    deletedProperty.reviews = reviewsResponse.rows
+
+    response.status(200).send(PropertySerializer.serialize(deletedProperty))
+  } catch (error) {
+    response.status(500).send(error)
+  }
+}
+
 module.exports = {
   getProperties,
   createProperty,
-  updateProperty
+  updateProperty,
+  deleteProperty
 }
