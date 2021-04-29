@@ -16,6 +16,24 @@ const getReviews = async (request, response) => {
   }
 }
 
+const createReview = async (request, response) => {
+  const { content, rating, propertyId } = request.body
+  const createdAt = new Date(), updatedAt = createdAt
+
+  const createReviewQueryText = `INSERT INTO reviews(content, rating, property_id, created_at, updated_at)
+                                VALUES($1, $2, $3, $4, $5)
+                                RETURNING *`
+
+  try {
+    const reviewsResponse = await pool.query(createReviewQueryText, [content, rating, propertyId, createdAt, updatedAt])
+    
+    response.status(200).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
+  } catch (error) {
+    response.status(500).send({ error })
+  }
+}
+
 module.exports = {
-  getReviews
+  getReviews,
+  createReview
 }
