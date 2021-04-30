@@ -27,7 +27,7 @@ const createReview = async (request, response) => {
   try {
     const reviewsResponse = await pool.query(createReviewQueryText, [content, rating, propertyId, createdAt, updatedAt])
     
-    response.status(200).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
+    response.status(201).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
   } catch (error) {
     response.status(500).send({ error })
   }
