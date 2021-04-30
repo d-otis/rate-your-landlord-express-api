@@ -3,29 +3,30 @@ const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
 const { queryAllReviews } = require('./reviews.queries')
 
+const queryAllProperties = async () => {
+  const propertiesQueryObj = {
+    text: "SELECT * FROM properties ORDER BY created_at DESC"
+  }
+
+  const { rows: propertyRows } = await pool.query(propertiesQueryObj)
+
+  return propertyRows
+}
+
 const getProperties = async (request, response) => {
-  const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
-  const reviewsQueryText = "SELECT * FROM reviews ORDER BY created_at DESC"
-
   try {
-    // 1. Query Properties:
-    const propertiesResponse = await pool.query(propertiesQueryText)
-    let rawProperties = propertiesResponse.rows
-    console.log(`getProperties() started: returning ${propertiesResponse.rowCount} rows`)
+    const propertyRows = await queryAllProperties()    
 
-    rawProperties = [...rawProperties.map(property => ({ ...property, reviews: [] })) ]
+    propertyRows.forEach(property => property.reviews = [])
 
-    // 1. Query Reviews:
-    const reviewsResponse = await pool.query(reviewsQueryText)
-    let rawReviews = reviewsResponse.rows
-    console.log(`reviews returned ${reviewsResponse.rowCount} records`)
+    const reviewRows = await queryAllReviews()
 
-    rawReviews.forEach(review => {
-      const idx = rawProperties.findIndex(property => property.id === review.property_id)
-      rawProperties[idx].reviews.push(review)
+    reviewRows.forEach(review => {
+      const idx = propertyRows.findIndex(property => property.id === review.property_id)
+      propertyRows[idx].reviews.push(review)
     })
 
-    response.status(200).send(PropertySerializer.serialize(rawProperties))
+    response.status(200).send(PropertySerializer.serialize(propertyRows))
     
   } catch (error) {
     console.log(error)
