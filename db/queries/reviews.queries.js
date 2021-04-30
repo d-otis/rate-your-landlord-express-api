@@ -29,11 +29,31 @@ const createReview = async (request, response) => {
     
     response.status(201).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
   } catch (error) {
-    response.status(500).send({ error })
+    response.status(500).send(serverError)
+  }
+}
+
+const updateReview = async (request, response) => {
+  const { id } = request.params
+  const { content, rating } = request.body
+  const updatedAt = new Date()
+
+  const updateReviewQueryText = `UPDATE reviews
+                                SET content = $1, rating = $2, updated_at = $3
+                                WHERE id = $4
+                                RETURNING *`
+  try {
+    const reviewResponse = await pool.query(updateReviewQueryText, [content, rating, updatedAt, id])
+
+    response.status(200).send(ReviewsSerializer.serialize(reviewResponse.rows[0]))
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
   }
 }
 
 module.exports = {
   getReviews,
-  createReview
+  createReview,
+  updateReview
 }
