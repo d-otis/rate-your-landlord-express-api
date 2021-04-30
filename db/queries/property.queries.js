@@ -1,6 +1,7 @@
 const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
+const { queryAllReviews } = require('./reviews.queries')
 
 const getProperties = async (request, response) => {
   const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
