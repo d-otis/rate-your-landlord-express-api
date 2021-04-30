@@ -2,6 +2,15 @@ const pool = require("../pool")
 const ReviewsSerializer = require("../../serializers/reviews.serializer")
 const { serverError } = require('../util')
 
+const queryAllReviews = async () => {
+  const reviewsQueryObj = {
+    text: "SELECT * FROM reviews ORDER BY created_at DESC"
+  }
+  const { rows: reviewRows } = await pool.query(reviewsQueryObj)
+
+  return reviewRows
+}
+
 const getReviews = async (request, response) => {
   const text = "SELECT * FROM reviews ORDER BY created_at DESC"
 
@@ -53,6 +62,8 @@ const updateReview = async (request, response) => {
 }
 
 module.exports = {
+  queryAllReviews,
+
   getReviews,
   createReview,
   updateReview
