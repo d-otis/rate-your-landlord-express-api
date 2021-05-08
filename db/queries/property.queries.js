@@ -1,7 +1,7 @@
 const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
-const { queryAllReviews } = require('./reviews.queries')
+const { queryAllReviews, findReviewsBy } = require('./reviews.queries')
 
 const queryAllProperties = async () => {
   const propertiesQueryObj = {
@@ -62,13 +62,11 @@ const updateProperty = async (request, response) => {
                                   WHERE id = $4
                                   RETURNING id, address, image_url, rating, created_at, updated_at, landlord_id`
   // 
-  const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
   try {
     const updatedPropertyResponse = await pool.query(updatePropertyQueryText, [address, imageUrl, updatedAt, id])
     const updatedProperty = updatedPropertyResponse.rows[0]
 
-    const ownedReviewsResponse = await pool.query(getOwnedReviewsQueryText, [id])
-    const ownedReviews = ownedReviewsResponse.rows
+    const ownedReviews = await findReviewsBy({propertyId: id})
 
     updatedProperty.reviews = ownedReviews
 
