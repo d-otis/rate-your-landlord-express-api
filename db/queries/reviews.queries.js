@@ -11,6 +11,16 @@ const queryAllReviews = async () => {
   return reviewRows
 }
 
+const findReviewsBy = async (config) => {
+  if (config.propertyId) {
+    const { propertyId } = config
+    const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
+    const { rows: reviewRows } = await pool.query(getOwnedReviewsQueryText, [propertyId])
+
+    return reviewRows
+  } 
+}
+
 const getReviews = async (request, response) => {
   const text = "SELECT * FROM reviews ORDER BY created_at DESC"
 
@@ -63,6 +73,7 @@ const updateReview = async (request, response) => {
 
 module.exports = {
   queryAllReviews,
+  findReviewsBy,
 
   getReviews,
   createReview,
