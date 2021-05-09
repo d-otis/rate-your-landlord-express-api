@@ -39,7 +39,7 @@ const getLandlords = async (request, response) => {
       })
     })
 
-    response.status(400).send(LandlordSerializer.serialize(landlords))
+    response.status(200).send(LandlordSerializer.serialize(landlords))
   } catch (error) {
     console.log(error)
     response.status(500).send(serverError)
