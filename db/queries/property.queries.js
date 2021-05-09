@@ -13,6 +13,15 @@ const queryAllProperties = async () => {
   return propertyRows
 }
 
+const findPropertiesBy = async (config) => {
+  if (config.landlordId) {
+    const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
+    const {rows: propertiesRows} = await pool.query(getOwnedPropertiesQueryText, [config.landlordId])
+
+    return propertiesRows
+  }
+}
+
 const getProperties = async (request, response) => {
   try {
     const propertyRows = await queryAllProperties()    
@@ -97,6 +106,7 @@ const deleteProperty = async (request, response) => {
 
 module.exports = {
   queryAllProperties,
+  findPropertiesBy,
   getProperties,
   createProperty,
   updateProperty,
