@@ -2,7 +2,7 @@ const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
 const { queryAllReviews } = require('./reviews.queries')
-const { queryAllProperties } = require('./property.queries')
+const { queryAllProperties, findPropertiesBy } = require('./property.queries')
 
 const getLandlords = async (request, response) => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
@@ -48,7 +48,6 @@ const getLandlords = async (request, response) => {
 
 const getLandlordById = async (request, response) => {
   const getLandlordQueryText = "SELECT * FROM landlords WHERE id = $1"
-  const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
   
   const id = request.params.id
 
@@ -59,10 +58,8 @@ const getLandlordById = async (request, response) => {
     console.log('executed query', { getLandlordQueryText, duration, rows: landlordResponse.rowCount })
     const rawLandlord = landlordResponse.rows[0]
 
-    const ownedPropertiesResponse = await pool.query(getOwnedPropertiesQueryText, [id])
-    const rawProperties = ownedPropertiesResponse.rows
-
-    rawLandlord.properties = rawProperties
+    const properties = await findPropertiesBy({landlordId: id})
+    rawLandlord.properties = properties
 
     response.status(200).send(LandlordSerializer.serialize(rawLandlord))
 
