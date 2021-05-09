@@ -6,7 +6,6 @@ const { queryAllReviews } = require('./reviews.queries')
 const getLandlords = async (request, response) => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
   const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
-  const reviewsQueryText = "SELECT * FROM reviews ORDER BY created_at DESC"
 
   try {
     // GET LANDLORDS
