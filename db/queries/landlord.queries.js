@@ -1,6 +1,7 @@
 const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
+const { queryAllReviews } = require('./reviews.queries')
 
 const getLandlords = async (request, response) => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
@@ -23,8 +24,7 @@ const getLandlords = async (request, response) => {
     })
 
     // GET REVIEWS
-    const reviewsResponse = await pool.query(reviewsQueryText)
-    const reviews = reviewsResponse.rows
+    const reviews = await queryAllReviews()
 
     // PUSH THE OWNED REVIEWS ONTO RESPECTIVE PROPERTIES
     reviews.forEach(review => {
