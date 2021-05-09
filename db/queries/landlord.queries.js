@@ -2,10 +2,10 @@ const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
 const { queryAllReviews } = require('./reviews.queries')
+const { queryAllProperties } = require('./property.queries')
 
 const getLandlords = async (request, response) => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
-  const propertiesQueryText = "SELECT * FROM properties ORDER BY created_at DESC"
 
   try {
     // GET LANDLORDS
@@ -13,8 +13,7 @@ const getLandlords = async (request, response) => {
     const landlords = landlordsResponse.rows.map(landlord => ({ ...landlord, properties: [], reviews: [] }))
 
     // GET PROPERTIES
-    const propertiesResponse = await pool.query(propertiesQueryText)
-    const properties = propertiesResponse.rows
+    const properties = await queryAllProperties()
 
     // ATTACH OWNED PROPERTIES TO RESPECTIVE LANDLORDS
     properties.forEach(property => {
