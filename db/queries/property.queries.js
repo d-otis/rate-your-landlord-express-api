@@ -96,6 +96,7 @@ const deleteProperty = async (request, response) => {
 }
 
 module.exports = {
+  queryAllProperties,
   getProperties,
   createProperty,
   updateProperty,
