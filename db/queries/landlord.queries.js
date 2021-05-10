@@ -93,8 +93,6 @@ const updateLandlord = async (request, response) => {
   const { name, image_url } = request.body
   const updatedAt = new Date()
 
-  console.log({id, name, image_url, updatedAt})
-
   const updateLandlordQueryText = `UPDATE landlords
                                   SET name = $1, image_url = $2, updated_at = $3
                                   WHERE id = $4
