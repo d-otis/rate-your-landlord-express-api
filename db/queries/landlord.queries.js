@@ -1,7 +1,7 @@
 const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
-const { queryAllReviews } = require('./reviews.queries')
+const { queryAllReviews, findReviewsBy } = require('./reviews.queries')
 const { queryAllProperties, findPropertiesBy } = require('./property.queries')
 
 const getLandlords = async (request, response) => {
@@ -59,7 +59,10 @@ const getLandlordById = async (request, response) => {
     const rawLandlord = landlordResponse.rows[0]
 
     const properties = await findPropertiesBy({landlordId: id})
+    const reviews = await findReviewsBy({ landlordId: id })
+    
     rawLandlord.properties = properties
+    rawLandlord.reviews = reviews
 
     response.status(200).send(LandlordSerializer.serialize(rawLandlord))
 
