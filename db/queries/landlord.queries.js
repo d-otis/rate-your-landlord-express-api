@@ -102,8 +102,10 @@ const updateLandlord = async (request, response) => {
     const updatedLandlordResponse = await pool.query(updateLandlordQueryText, [name, image_url, updatedAt, id])
     const updatedLandlord = updatedLandlordResponse.rows[0]
     const properties = await findPropertiesBy({ type: "landlord", id })
+    const reviews = await findReviewsBy({ type: "landlord", id })
 
     updatedLandlord.properties = properties
+    updatedLandlord.reviews = reviews
 
     response.status(200).send(LandlordSerializer.serialize(updatedLandlord))
   } catch (error) {
