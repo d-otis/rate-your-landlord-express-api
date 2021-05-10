@@ -52,10 +52,7 @@ const getLandlordById = async (request, response) => {
   const id = request.params.id
 
   try {
-    const start = Date.now()
     const landlordResponse = await pool.query(getLandlordQueryText, [id])
-    const duration = Date.now() - start
-    console.log('executed query', { getLandlordQueryText, duration, rows: landlordResponse.rowCount })
     const rawLandlord = landlordResponse.rows[0]
 
     const properties = await findPropertiesBy({ type: "landlord", id })
