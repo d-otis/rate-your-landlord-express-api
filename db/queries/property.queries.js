@@ -75,7 +75,7 @@ const updateProperty = async (request, response) => {
     const updatedPropertyResponse = await pool.query(updatePropertyQueryText, [address, imageUrl, updatedAt, id])
     const updatedProperty = updatedPropertyResponse.rows[0]
 
-    const ownedReviews = await findReviewsBy({propertyId: id})
+    const ownedReviews = await findReviewsBy({ type: "property", id })
 
     updatedProperty.reviews = ownedReviews
 

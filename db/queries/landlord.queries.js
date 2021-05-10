@@ -59,8 +59,8 @@ const getLandlordById = async (request, response) => {
     const rawLandlord = landlordResponse.rows[0]
 
     const properties = await findPropertiesBy({landlordId: id})
-    const reviews = await findReviewsBy({ landlordId: id })
-    
+    const reviews = await findReviewsBy({ type: "landlord", id })
+
     rawLandlord.properties = properties
     rawLandlord.reviews = reviews
 
