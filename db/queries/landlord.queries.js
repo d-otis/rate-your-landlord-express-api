@@ -109,6 +109,7 @@ const updateLandlord = async (request, response) => {
 
     response.status(200).send(LandlordSerializer.serialize(updatedLandlord))
   } catch (error) {
+    console.log(error)
     response.status(500).send(serverError)
   }
 }
