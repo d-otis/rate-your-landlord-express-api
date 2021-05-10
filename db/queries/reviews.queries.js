@@ -18,7 +18,18 @@ const findReviewsBy = async (config) => {
     const { rows: reviewRows } = await pool.query(getOwnedReviewsQueryText, [propertyId])
 
     return reviewRows
-  } 
+  } else if (config.landlordId) {
+    const { landlordId } = config
+    const getReviewsByLandlordQueryText = `SELECT reviews.*
+                                          FROM reviews
+                                          JOIN properties ON properties.id = reviews.property_id
+                                          JOIN landlords ON properties.landlord_id = landlords.id
+                                          WHERE landlords.id = $1`
+
+    const { rows: reviewRows } = await pool.query(getReviewsByLandlordQueryText, [landlordId])
+
+    return reviewRows
+  }
 }
 
 const getReviews = async (request, response) => {
@@ -28,7 +39,7 @@ const getReviews = async (request, response) => {
     response.status(200).send(ReviewsSerializer.serialize(reviews))
   } catch (error) {
     console.log(error)
-    
+
     response.status(500).send(serverError)
   }
 }
