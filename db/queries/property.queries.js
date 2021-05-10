@@ -14,11 +14,16 @@ const queryAllProperties = async () => {
 }
 
 const findPropertiesBy = async (config) => {
-  if (config.landlordId) {
-    const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
-    const {rows: propertiesRows} = await pool.query(getOwnedPropertiesQueryText, [config.landlordId])
+  const { id } = config
 
-    return propertiesRows
+  switch (config.type) {
+    case "landlord": {
+      const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
+      const { rows } = await pool.query(getOwnedPropertiesQueryText, [id])
+      return rows
+    }
+    default:
+      break;
   }
 }
 
