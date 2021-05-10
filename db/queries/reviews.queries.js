@@ -12,23 +12,26 @@ const queryAllReviews = async () => {
 }
 
 const findReviewsBy = async (config) => {
-  if (config.propertyId) {
-    const { propertyId } = config
-    const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
-    const { rows: reviewRows } = await pool.query(getOwnedReviewsQueryText, [propertyId])
+  const { id } = config
+  switch (config.type) {
+    case "landlord": {
+      const getReviewsByLandlordQueryText = `SELECT reviews.*
+                                            FROM reviews
+                                            JOIN properties ON properties.id = reviews.property_id
+                                            JOIN landlords ON properties.landlord_id = landlords.id
+                                            WHERE landlords.id = $1`
+      const { rows } = await pool.query(getReviewsByLandlordQueryText, [id])
 
-    return reviewRows
-  } else if (config.landlordId) {
-    const { landlordId } = config
-    const getReviewsByLandlordQueryText = `SELECT reviews.*
-                                          FROM reviews
-                                          JOIN properties ON properties.id = reviews.property_id
-                                          JOIN landlords ON properties.landlord_id = landlords.id
-                                          WHERE landlords.id = $1`
+      return rows
+    }
+    case "property": {
+      const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
+      const { rows } = await pool.query(getOwnedReviewsQueryText, [id])
 
-    const { rows: reviewRows } = await pool.query(getReviewsByLandlordQueryText, [landlordId])
-
-    return reviewRows
+      return rows
+    }
+    default:
+      break;
   }
 }
 
