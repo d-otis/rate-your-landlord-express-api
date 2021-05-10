@@ -79,10 +79,9 @@ const updateProperty = async (request, response) => {
   try {
     const updatedPropertyResponse = await pool.query(updatePropertyQueryText, [address, imageUrl, updatedAt, id])
     const updatedProperty = updatedPropertyResponse.rows[0]
+    const reviews = await findReviewsBy({ type: "property", id })
 
-    const ownedReviews = await findReviewsBy({ type: "property", id })
-
-    updatedProperty.reviews = ownedReviews
+    updatedProperty.reviews = reviews
 
     response.status(200).send(PropertySerializer.serialize(updatedProperty))
   } catch (error) {
