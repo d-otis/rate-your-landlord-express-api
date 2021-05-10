@@ -48,6 +48,24 @@ const getProperties = async (request, response) => {
   }
 }
 
+const getPropertyById = async (request, response) => {
+  const getPropertyQueryText = `SELECT * FROM properties WHERE id = $1`
+  const { id } = request.params
+
+  try {
+    const propertyResponse = await pool.query(getPropertyQueryText, [id])
+    const property = propertyResponse.rows[0]
+    const reviews = await findReviewsBy({ type: "property", id })
+
+    property.reviews = reviews
+
+    response.status(200).send(PropertySerializer.serialize(property))
+  } catch (error) {
+    console.log(error)
+    response.status(500).send(serverError)
+  }
+}
+
 const createProperty = async (request, response) => {
   const { address, image_url, landlord_id } = request.body
   const createdAt = new Date(), updatedAt = createdAt
@@ -113,6 +131,7 @@ module.exports = {
   queryAllProperties,
   findPropertiesBy,
   getProperties,
+  getPropertyById,
   createProperty,
   updateProperty,
   deleteProperty
