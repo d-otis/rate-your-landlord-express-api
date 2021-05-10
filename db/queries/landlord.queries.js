@@ -100,16 +100,12 @@ const updateLandlord = async (request, response) => {
                                   WHERE id = $4
                                   RETURNING id, name, image_url, created_at, updated_at, rating`
 
-  const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
-
   try {
     const updatedLandlordResponse = await pool.query(updateLandlordQueryText, [name, image_url, updatedAt, id])
     const updatedLandlord = updatedLandlordResponse.rows[0]
+    const properties = await findPropertiesBy({ type: "landlord", id })
 
-    const ownedPropertiesResponse = await pool.query(getOwnedPropertiesQueryText, [id])
-    const rawProperties = ownedPropertiesResponse.rows
-
-    updatedLandlord.properties = rawProperties
+    updatedLandlord.properties = properties
 
     response.status(200).send(LandlordSerializer.serialize(updatedLandlord))
   } catch (error) {
