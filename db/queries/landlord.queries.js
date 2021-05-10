@@ -58,7 +58,7 @@ const getLandlordById = async (request, response) => {
     console.log('executed query', { getLandlordQueryText, duration, rows: landlordResponse.rowCount })
     const rawLandlord = landlordResponse.rows[0]
 
-    const properties = await findPropertiesBy({landlordId: id})
+    const properties = await findPropertiesBy({ type: "landlord", id })
     const reviews = await findReviewsBy({ type: "landlord", id })
 
     rawLandlord.properties = properties
