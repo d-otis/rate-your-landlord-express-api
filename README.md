@@ -11,15 +11,9 @@
 - after that use Sequelize :-)
 - refactor project structure to mirror node-pg documentation?
 - add extra hacky attrs to reviews JSON
-- POST/PATCH/DELETE routes bruh
 - set random image for landlord from UNSPLASH like RoR
 - hacky landlord rating and property updates when reviews are created
 - make sure adding review => updates ratings for landlord and property
 - load mocking data with JS instead of Ruby
 - enforce strict consistency with underscore vs camelCase
-
-### Refactoring Queries
-
-1. return raw nested objects from helper functions into variables
-2. modify by adding associations if applicable
-3. pass those into response.send()
+  
