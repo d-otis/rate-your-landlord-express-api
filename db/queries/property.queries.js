@@ -81,6 +81,7 @@ const updateProperty = async (request, response) => {
 
     response.status(200).send(PropertySerializer.serialize(updatedProperty))
   } catch (error) {
+    console.log(error)
     response.status(500).send(serverError)
   }    
 }
