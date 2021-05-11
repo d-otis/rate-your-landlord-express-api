@@ -16,4 +16,5 @@
 - make sure adding review => updates ratings for landlord and property
 - load mocking data with JS instead of Ruby
 - enforce strict consistency with underscore vs camelCase
+- fix circular dependency issue by offloading helper functions into their own modules
   
