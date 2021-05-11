@@ -53,7 +53,7 @@ const getLandlords = async (request, response) => {
 const getLandlordById = async (request, response) => {
   const getLandlordQueryText = "SELECT * FROM landlords WHERE id = $1"
   
-  const id = request.params.id
+  const { id }= request.params
 
   try {
     const landlordResponse = await pool.query(getLandlordQueryText, [id])
