@@ -1,9 +1,11 @@
 const pool = require('../pool')
 
+  // _                    _ _               _     
+//  | |    __ _ _ __   __| | | ___  _ __ __| |___ 
+//  | |   / _` | '_ \ / _` | |/ _ \| '__/ _` / __|
+//  | |__| (_| | | | | (_| | | (_) | | | (_| \__ \
+//  |_____\__,_|_| |_|\__,_|_|\___/|_|  \__,_|___/
 
-/* 
-LANDLORDS
-*/
 const queryAllLandlords = async () => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
 
@@ -13,9 +15,12 @@ const queryAllLandlords = async () => {
 }
 
 
-/* 
-PROPERTIES 
-*/
+  // ____                            _   _           
+//  |  _ \ _ __ ___  _ __   ___ _ __| |_(_) ___  ___ 
+//  | |_) | '__/ _ \| '_ \ / _ \ '__| __| |/ _ \/ __|
+//  |  __/| | | (_) | |_) |  __/ |  | |_| |  __/\__ \
+//  |_|   |_|  \___/| .__/ \___|_|   \__|_|\___||___/
+//                  |_| 
 
 const queryAllProperties = async () => {
   const propertiesQueryObj = {
@@ -63,9 +68,11 @@ const updatePropertyRating = async id => {
   return updatedProperty.rows[0]
 }
 
-/* 
-REVIEWS
-*/
+  // ____            _                   
+//  |  _ \ _____   _(_) _____      _____ 
+//  | |_) / _ \ \ / / |/ _ \ \ /\ / / __|
+//  |  _ <  __/\ V /| |  __/\ V  V /\__ \
+//  |_| \_\___| \_/ |_|\___| \_/\_/ |___/
 
 const queryAllReviews = async () => {
   const reviewsQueryObj = {
