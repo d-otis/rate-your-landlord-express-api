@@ -1,8 +1,13 @@
 const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
-const { queryAllReviews, findReviewsBy } = require('./reviews.queries')
-const { queryAllProperties, findPropertiesBy } = require('./property.queries')
+const {
+  queryAllProperties,
+  findPropertiesBy,
+  queryAllReviews,
+  findReviewsBy,
+  queryAllLandlords
+} = require('../helpers')
 
 const getLandlords = async (request, response) => {
   const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"

@@ -1,38 +1,30 @@
 const pool = require("../pool")
 const ReviewsSerializer = require("../../serializers/reviews.serializer")
 const { serverError } = require('../util')
+const {
+  queryAllReviews
+} = require('../helpers')
 
-const queryAllReviews = async () => {
-  const reviewsQueryObj = {
-    text: "SELECT * FROM reviews ORDER BY created_at DESC"
-  }
-  const { rows: reviewRows } = await pool.query(reviewsQueryObj)
+const updatePropertyRating = async id => {
+  // take incoming property id and use it to
+  // update property rating based on review averages
 
-  return reviewRows
-}
+  // 1. get new average from db
+  // 2. update said property
+  const queryText = `SELECT AVG(reviews.rating) AS "average"
+                    FROM reviews
+                    JOIN properties ON properties.id = reviews.property_id 
+                    JOIN landlords ON landlords.id = properties.landlord_id
+                    WHERE reviews.property_id = $1;`
 
-const findReviewsBy = async (config) => {
-  const { id } = config
-  switch (config.type) {
-    case "landlord": {
-      const getReviewsByLandlordQueryText = `SELECT reviews.*
-                                            FROM reviews
-                                            JOIN properties ON properties.id = reviews.property_id
-                                            JOIN landlords ON properties.landlord_id = landlords.id
-                                            WHERE landlords.id = $1`
-      const { rows } = await pool.query(getReviewsByLandlordQueryText, [id])
+  const newAverage = await pool.query(queryText, [id])
 
-      return rows
-    }
-    case "property": {
-      const getOwnedReviewsQueryText = `SELECT * FROM reviews WHERE reviews.property_id = $1`
-      const { rows } = await pool.query(getOwnedReviewsQueryText, [id])
+  console.log({foley: newAverage.rows[0].avg})
 
-      return rows
-    }
-    default:
-      break;
-  }
+  const updatedProperty = await pool.query("UPDATE properties SET rating = $1 WHERE id = $2 RETURNING *", [parseFloat(newAverage), id])
+
+  console.log({ updatedProperty })
+  return updatedProperty.rows[0]
 }
 
 const getReviews = async (request, response) => {
@@ -57,9 +49,11 @@ const createReview = async (request, response) => {
 
   try {
     const reviewsResponse = await pool.query(createReviewQueryText, [content, rating, propertyId, createdAt, updatedAt])
-    
+    const propertyRating = await updatePropertyRating()
+    console.log({propertyRating})
     response.status(201).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
   } catch (error) {
+    console.log(error)
     response.status(500).send(serverError)
   }
 }
@@ -84,9 +78,6 @@ const updateReview = async (request, response) => {
 }
 
 module.exports = {
-  queryAllReviews,
-  findReviewsBy,
-
   getReviews,
   createReview,
   updateReview

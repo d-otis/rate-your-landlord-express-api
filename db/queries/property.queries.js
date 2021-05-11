@@ -1,31 +1,11 @@
 const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
-const { queryAllReviews, findReviewsBy } = require('./reviews.queries')
-
-const queryAllProperties = async () => {
-  const propertiesQueryObj = {
-    text: "SELECT * FROM properties ORDER BY created_at DESC"
-  }
-
-  const { rows: propertyRows } = await pool.query(propertiesQueryObj)
-
-  return propertyRows
-}
-
-const findPropertiesBy = async (config) => {
-  const { id } = config
-
-  switch (config.type) {
-    case "landlord": {
-      const getOwnedPropertiesQueryText = "SELECT * FROM properties WHERE properties.landlord_id = $1"
-      const { rows } = await pool.query(getOwnedPropertiesQueryText, [id])
-      return rows
-    }
-    default:
-      break;
-  }
-}
+const { 
+  queryAllProperties,
+  queryAllReviews,
+  findReviewsBy 
+} = require('../helpers')
 
 const getProperties = async (request, response) => {
   try {
@@ -128,8 +108,6 @@ const deleteProperty = async (request, response) => {
 }
 
 module.exports = {
-  queryAllProperties,
-  findPropertiesBy,
   getProperties,
   getPropertyById,
   createProperty,
