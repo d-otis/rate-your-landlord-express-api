@@ -41,6 +41,28 @@ const findPropertiesBy = async (config) => {
   }
 }
 
+const updatePropertyRating = async id => {
+  // take incoming property id and use it to
+  // update property rating based on review averages
+
+  // 1. get new average from db
+  // 2. update said property
+  const queryText = `SELECT AVG(reviews.rating) AS "average"
+                    FROM reviews
+                    JOIN properties ON properties.id = reviews.property_id 
+                    JOIN landlords ON landlords.id = properties.landlord_id
+                    WHERE reviews.property_id = $1;`
+
+  const newAverage = await pool.query(queryText, [id])
+
+  console.log({foley: newAverage.rows[0].avg})
+
+  const updatedProperty = await pool.query("UPDATE properties SET rating = $1 WHERE id = $2 RETURNING *", [parseFloat(newAverage), id])
+
+  console.log({ updatedProperty })
+  return updatedProperty.rows[0]
+}
+
 /* 
 REVIEWS
 */
@@ -82,6 +104,7 @@ module.exports = {
   queryAllLandlords,
   queryAllProperties,
   findPropertiesBy,
+  updatePropertyRating,
   queryAllReviews,
   findReviewsBy
 }
