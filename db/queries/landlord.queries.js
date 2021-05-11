@@ -10,12 +10,11 @@ const {
 } = require('../helpers')
 
 const getLandlords = async (request, response) => {
-  const landlordsQueryText = "SELECT * FROM landlords ORDER BY created_at DESC"
 
   try {
     // GET LANDLORDS
-    const landlordsResponse = await pool.query(landlordsQueryText)
-    const landlords = landlordsResponse.rows.map(landlord => ({ ...landlord, properties: [], reviews: [] }))
+    const landlordsResponse = await queryAllLandlords()
+    const landlords = landlordsResponse.map(landlord => ({ ...landlord, properties: [], reviews: [] }))
 
     // GET PROPERTIES
     const properties = await queryAllProperties()
