@@ -119,6 +119,7 @@ const findReviewsBy = async (config) => {
 
 module.exports = {
   queryAllLandlords,
+  updateLandlordRating,
   queryAllProperties,
   findPropertiesBy,
   updatePropertyRatingAndReturnLandlord,
