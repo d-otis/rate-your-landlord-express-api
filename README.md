@@ -13,10 +13,8 @@
 - add extra hacky attrs to reviews JSON
 - set random image for landlord from UNSPLASH like RoR
 - hacky landlord rating and property updates when reviews are created
-- make sure adding review => updates ratings for landlord and property
 - load mocking data with JS instead of Ruby
 - enforce strict consistency with underscore vs camelCase
 - better error logging for records not being found
 - add status message, codes, re: success/failure and what was achieved or erroneous
-  
   
