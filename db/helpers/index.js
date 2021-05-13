@@ -29,6 +29,7 @@ const updateLandlordRating = async (landlordId) => {
 
   const updatedLandlord = await pool.query(updateLandlordRatingQueryText, [newRating, landlordId])
 
+  return { avg: newRating }
 }
 
 
