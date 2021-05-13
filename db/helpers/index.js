@@ -14,6 +14,23 @@ const queryAllLandlords = async () => {
   return landlordsRows
 }
 
+const updateLandlordRating = async (landlordId) => {
+  const getNewAverageQueryText = `SELECT AVG(reviews.rating), landlords.name
+                    FROM properties
+                    JOIN landlords ON properties.landlord_id = landlords.id
+                    JOIN reviews ON properties.id = reviews.property_id
+                    WHERE landlords.id = $1
+                    GROUP BY landlords.id`
+
+  const result = await pool.query(getNewAverageQueryText, [landlordId])
+  const { avg: newRating } = result.rows[0]
+
+  const updateLandlordRatingQueryText = `UPDATE landlords SET rating = $1 WHERE id = $2 RETURNING *`
+
+  const updatedLandlord = await pool.query(updateLandlordRatingQueryText, [newRating, landlordId])
+
+}
+
 
   // ____                            _   _           
 //  |  _ \ _ __ ___  _ __   ___ _ __| |_(_) ___  ___ 
@@ -46,18 +63,19 @@ const findPropertiesBy = async (config) => {
   }
 }
 
-const updatePropertyRating = async id => {
-  const queryText = `SELECT AVG(reviews.rating)
+const updatePropertyRatingAndReturnLandlord = async id => {
+  const queryText = `SELECT AVG(reviews.rating), landlords.id AS landlord_id
                     FROM reviews
                     JOIN properties ON properties.id = reviews.property_id 
                     JOIN landlords ON landlords.id = properties.landlord_id
-                    WHERE reviews.property_id = $1`
+                    WHERE reviews.property_id = $1
+                    GROUP BY landlords.id`
 
   const newAverage = await pool.query(queryText, [id])
 
-  const updatedProperty = await pool.query("UPDATE properties SET rating = $1 WHERE id = $2 RETURNING *", [parseFloat(newAverage.rows[0].avg), id])
+  await pool.query("UPDATE properties SET rating = $1 WHERE id = $2 RETURNING *", [parseFloat(newAverage.rows[0].avg), id])
 
-  return updatedProperty.rows[0]
+  return newAverage.rows[0]
 }
 
   // ____            _                   
@@ -103,7 +121,7 @@ module.exports = {
   queryAllLandlords,
   queryAllProperties,
   findPropertiesBy,
-  updatePropertyRating,
+  updatePropertyRatingAndReturnLandlord,
   queryAllReviews,
   findReviewsBy
 }
