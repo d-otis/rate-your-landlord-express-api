@@ -118,6 +118,28 @@ const findReviewsBy = async (config) => {
   }
 }
 
+  // __  __ _          
+//  |  \/  (_)___  ___ 
+//  | |\/| | / __|/ __|
+//  | |  | | \__ \ (__ 
+//  |_|  |_|_|___/\___|
+
+const updatePropertyAndLandlordRatings = async (propertyId) => {
+/* 
+  ARGS: propertyId
+  ACTION: 
+          1. update property rating and return landlordId
+          2. use that landlordId to update said landlord's rating based on updated review
+  RETURNS: null (maybe a success somewhere in the console??)
+*/
+
+  const { landlord_id: landlordId, avg: propertyRating } = await updatePropertyRatingAndReturnLandlord(propertyId)
+  const { avg: landlordRating } = await updateLandlordRating(landlordId)
+
+  console.log({ landlordRating, propertyRating })
+
+}
+
 module.exports = {
   queryAllLandlords,
   updateLandlordRating,
@@ -125,5 +147,6 @@ module.exports = {
   findPropertiesBy,
   updatePropertyRatingAndReturnLandlord,
   queryAllReviews,
-  findReviewsBy
+  findReviewsBy,
+  updatePropertyAndLandlordRatings
 }
