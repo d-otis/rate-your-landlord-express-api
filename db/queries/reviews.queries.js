@@ -4,7 +4,8 @@ const { serverError } = require('../util')
 const {
   queryAllReviews,
   updatePropertyRatingAndReturnLandlord,
-  updateLandlordRating
+  updateLandlordRating,
+  updatePropertyAndLandlordRatings
 } = require('../helpers')
 
 const getReviews = async (request, response) => {
@@ -29,9 +30,9 @@ const createReview = async (request, response) => {
 
   try {
     const reviewsResponse = await pool.query(createReviewQueryText, [content, rating, propertyId, createdAt, updatedAt])
-    const { landlord_id: landlordId } = await updatePropertyRatingAndReturnLandlord(propertyId)
 
-    await updateLandlordRating(landlordId)
+    await updatePropertyAndLandlordRatings(propertyId)
+
     response.status(201).send(ReviewsSerializer.serialize(reviewsResponse.rows[0]))
   } catch (error) {
     console.log(error)
@@ -50,6 +51,8 @@ const updateReview = async (request, response) => {
                                 RETURNING *`
   try {
     const reviewResponse = await pool.query(updateReviewQueryText, [content, rating, updatedAt, id])
+
+    await updatePropertyAndLandlordRatings(reviewResponse.rows[0].property_id)
 
     response.status(200).send(ReviewsSerializer.serialize(reviewResponse.rows[0]))
   } catch (error) {
