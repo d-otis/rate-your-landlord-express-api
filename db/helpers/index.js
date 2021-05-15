@@ -142,10 +142,8 @@ const updatePropertyAndLandlordRatings = async (propertyId) => {
 
 module.exports = {
   queryAllLandlords,
-  updateLandlordRating,
   queryAllProperties,
   findPropertiesBy,
-  updatePropertyRatingAndReturnLandlord,
   queryAllReviews,
   findReviewsBy,
   updatePropertyAndLandlordRatings

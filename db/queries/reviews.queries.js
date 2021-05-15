@@ -3,8 +3,6 @@ const ReviewsSerializer = require("../../serializers/reviews.serializer")
 const { serverError } = require('../util')
 const {
   queryAllReviews,
-  updatePropertyRatingAndReturnLandlord,
-  updateLandlordRating,
   updatePropertyAndLandlordRatings
 } = require('../helpers')
 
