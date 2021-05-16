@@ -6,3 +6,7 @@ const unsplash = createApi({
   accessKey: process.env.UNSPLASH_ACCESS_KEY,
   fetch: nodeFetch
 })
+
+module.exports = {
+  unsplash
+}
