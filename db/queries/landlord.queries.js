@@ -1,6 +1,7 @@
 const pool = require('../pool')
 const LandlordSerializer = require("../../serializers/landlords.serializer")
 const { serverError } = require('../util')
+const { unsplash } = require('../../unsplash')
 const {
   queryAllProperties,
   findPropertiesBy,
@@ -74,7 +75,8 @@ const getLandlordById = async (request, response) => {
 }
 
 const createLandlord = async (request, response) => {
-  const { name, image_url } = request.body
+  const { name } = request.body
+  let { image_url } = request.body
   const createdAt = new Date()
   const updatedAt = createdAt
 
@@ -83,8 +85,14 @@ const createLandlord = async (request, response) => {
                                   RETURNING id, name, image_url, created_at, updated_at, rating`
 
   try {
+    if (!image_url) {
+      const { response } = await unsplash.photos.getRandom({query: "person", orientation: "squarish"})
+      image_url = response.urls.regular
+    }
+
     const landlordResponse = await pool.query(createLandlordQueryText, [name, image_url, createdAt, updatedAt])
     const rawLandlord = landlordResponse.rows[0]
+    
     response.status(200).send(LandlordSerializer.serialize(rawLandlord))
   } catch (error) {
     console.log(error)
