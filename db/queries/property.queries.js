@@ -1,6 +1,7 @@
 const pool = require('../pool')
 const PropertySerializer = require('../../serializers/properties.serializer')
 const { serverError } = require('../util')
+const { unsplash } = require('../../unsplash')
 const { 
   queryAllProperties,
   queryAllReviews,
@@ -47,7 +48,8 @@ const getPropertyById = async (request, response) => {
 }
 
 const createProperty = async (request, response) => {
-  const { address, image_url, landlord_id } = request.body
+  const { address, landlord_id } = request.body
+  let { image_url } = request.body
   const createdAt = new Date(), updatedAt = createdAt
 
   const createPropertyQueryText = `INSERT INTO properties(address, image_url, landlord_id, created_at, updated_at)
@@ -55,6 +57,10 @@ const createProperty = async (request, response) => {
                                   RETURNING id, address, image_url, created_at, updated_at, rating, landlord_id`
 
     try {
+      if (!image_url) {
+        const { response } = await unsplash.photos.getRandom({query: "apartment", orientation: "landscape"})
+        image_url = response.urls.regular
+      }
       const propertyResponse = await pool.query(createPropertyQueryText, [address, image_url, landlord_id, createdAt, updatedAt])
       const createdProperty = propertyResponse.rows[0]
 
