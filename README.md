@@ -17,4 +17,4 @@
 - enforce strict consistency with underscore vs camelCase
 - better error logging for records not being found
 - add status message, codes, re: success/failure and what was achieved or erroneous
-  
+- validation for image_url using regex?
