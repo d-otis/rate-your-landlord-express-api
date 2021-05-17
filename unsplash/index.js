@@ -7,6 +7,12 @@ const unsplash = createApi({
   fetch: nodeFetch
 })
 
+const getRandomLandlordImage = async () => {
+  const { response } = await unsplash.photos.getRandom({ query: "person", orientation: "squarish" })
+  return response.urls.regular
+}
+
 module.exports = {
-  unsplash
+  unsplash,
+  getRandomLandlordImage
 }
