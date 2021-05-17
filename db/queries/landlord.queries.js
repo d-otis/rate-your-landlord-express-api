@@ -101,7 +101,8 @@ const createLandlord = async (request, response) => {
 
 const updateLandlord = async (request, response) => {
   const { id } = request.params
-  const { name, image_url } = request.body
+  const { name } = request.body
+  let { image_url } = request.body
   const updatedAt = new Date()
 
   const updateLandlordQueryText = `UPDATE landlords
@@ -110,6 +111,10 @@ const updateLandlord = async (request, response) => {
                                   RETURNING id, name, image_url, created_at, updated_at, rating`
 
   try {
+    if (!image_url) {
+      image_url = await getRandomLandlordImage()
+    }
+
     const updatedLandlordResponse = await pool.query(updateLandlordQueryText, [name, image_url, updatedAt, id])
     const updatedLandlord = updatedLandlordResponse.rows[0]
     const properties = await findPropertiesBy({ type: "landlord", id })
