@@ -18,3 +18,5 @@
 - better error logging for records not being found
 - add status message, codes, re: success/failure and what was achieved or erroneous
 - validation for image_url using regex?
+- error check if landlord doesn't exist when creating a new property
+  
