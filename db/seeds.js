@@ -54,7 +54,16 @@ const generateLandlords = async (num) => {
   return landlords
 }
 
+const destroyAllData = async () => {
+  await pool.query("DELETE FROM landlords")
+  await pool.query("DELETE FROM properties")
+  await pool.query("DELETE FROM reviews")
+}
+
 const seedDatabase = async () => {
+
+  await destroyAllData()
+
   const landlordsValues = await generateLandlords(numLandlords)
   const landlordsQuery = format("INSERT INTO landlords (name, image_url, created_at, updated_at) VALUES %L RETURNING *", landlordsValues)
 
