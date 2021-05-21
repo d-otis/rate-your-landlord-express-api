@@ -28,9 +28,15 @@ const generateProperties = async (num) => {
   const images = await generatePropertyImages(num)
 
   let properties = []
-
-  // somehow will need to get landlord ids from db
-  // to assign to properties!
+  for (let i = 0; i < num; i++) {
+    properties.push([
+      `${faker.address.streetAddress()} ${faker.address.streetSuffix()} ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
+      images[i].urls.regular,
+      faker.date.past(),
+      faker.date.recent()
+    ])
+  }
+  return properties
 }
 
 const generateLandlords = async (num) => {
