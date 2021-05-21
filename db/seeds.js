@@ -26,6 +26,20 @@ const generatePropertyImages = async (num) => {
   return response
 }
 
+const generateReviews = async (num) => {
+  let reviews = []
+  for (let i = 0; i < num; i++) {
+    reviews.push([
+      faker.lorem.paragraphs(2),
+      faker.datatype.number({min: 1, max: 5}),
+      faker.date.past(),
+      faker.date.recent()
+    ])
+  }
+  
+  return reviews
+}
+
 const generateProperties = async (num) => {
   const images = await generatePropertyImages(num)
 
