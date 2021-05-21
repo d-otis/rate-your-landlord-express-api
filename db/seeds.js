@@ -12,7 +12,7 @@ const pool = require('./pool')
 
 const numLandlords = 5
 const numPropertiesPerLandlord = 3
-const numApartmentPhotos = numLandlords * numPropertiesPerLandlord
+const numProperties = numLandlords * numPropertiesPerLandlord
 
 const generateLandlordImages = async (num) => {
   const { response } = await unsplash.photos.getRandom({ query: "person", orientation: "squarish", count: num })
