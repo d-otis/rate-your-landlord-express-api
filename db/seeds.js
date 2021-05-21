@@ -7,15 +7,8 @@
 */
 const faker = require('faker')
 const { unsplash } = require('../unsplash')
-const pgp = require("pg-promise")({
-  capSQL: true
-})
-
-const db = pgp({ database: "rate_your_landlord_backend_development" })
-
-const landlordsColumnSet = new pgp.helpers.ColumnSet([
-  "name", "created_at", "updated_at", "image_url"
-], { table: "landlords" })
+const format = require('pg-format')
+const pool = require('./pool')
 
 const numLandlords = 5
 const numPropertiesPerLandlord = 3
@@ -26,32 +19,43 @@ const generateLandlordImages = async (num) => {
   return response
 }
 
+const generatePropertyImages = async (num) => {
+  const { response } = await unsplash.photos.getRandom({ query: "apartment", orientation: 'landscape', count: num })
+  return response
+}
+
+const generateProperties = async (num) => {
+  const images = await generatePropertyImages(num)
+
+  let properties = []
+
+  // somehow will need to get landlord ids from db
+  // to assign to properties!
+}
+
 const generateLandlords = async (num) => {
   const images = await generateLandlordImages(num)
 
   let landlords = []
   for (let i = 0; i < num; i++) {
-    landlords.push({
-      name: faker.name.findName(),
-      created_at: faker.date.past(),
-      updated_at: faker.date.recent(),
-      image_url: images[i].urls.regular
-    })
+    landlords.push([
+      faker.name.findName(),
+      images[i].urls.regular,
+      faker.date.past(),
+      faker.date.recent()
+    ])
   }
   return landlords
 }
 
 const seedDatabase = async () => {
-  const landlords = await generateLandlords(numLandlords)
-  const insertLandlords = pgp.helpers.insert(landlords, landlordsColumnSet)
+  const landlordsValues = await generateLandlords(numLandlords)
+  const landlordsQuery = format("INSERT INTO landlords (name, image_url, created_at, updated_at) VALUES %L RETURNING *", landlordsValues)
 
-  db.none(insertLandlords)
-    .then((res) => {
-      console.log('All landlords inserted')
-    })
-    .catch(err => {
-      console.log({err})
-    })
+  const { rows: landlords } = await pool.query(landlordsQuery)
+
+  const landlordIds = landlords.map(landlord => landlord.id)
+
 }
 
 seedDatabase()
