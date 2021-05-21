@@ -70,7 +70,18 @@ const seedDatabase = async () => {
   const { rows: landlordIds } = await pool.query(landlordsQuery)
   const propertiesValues = await generateProperties(numProperties)
 
-  const landlordIds = landlords.map(landlord => landlord.id)
+  landlordIds.map(ll => ll.id).forEach(landlordId => {
+    let currentProperties = propertiesValues.splice(-numPropertiesPerLandlord)
+    currentProperties.forEach(property => property.unshift(landlordId))
+    propertiesValues.unshift(...currentProperties)
+  })
+
+  const propertiesQuery = format(`INSERT INTO properties 
+                                  (landlord_id, address, image_url, created_at, updated_at) 
+                                  VALUES %L RETURNING id`, 
+                                  propertiesValues)
+                                  
+  const { rows: propertiesIds } = await pool.query(propertiesQuery)
 
 }
 
