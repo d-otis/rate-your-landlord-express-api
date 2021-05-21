@@ -97,9 +97,24 @@ const seedDatabase = async () => {
                                   (landlord_id, address, image_url, created_at, updated_at) 
                                   VALUES %L RETURNING id`, 
                                   propertiesValues)
-                                  
+
   const { rows: propertiesIds } = await pool.query(propertiesQuery)
 
+  const reviewsValues = await generateReviews(numReviews)
+
+  propertiesIds.map(p => p.id).forEach(propertyId => {
+    let currentReviews = reviewsValues.splice(-numReviewsPerProperty)
+    currentReviews.forEach(review => review.unshift(propertyId))
+    reviewsValues.unshift(...currentReviews)
+  })
+
+
+  const reviewsQuery = format("INSERT INTO reviews (property_id, content, rating, created_at, updated_at) VALUES %L RETURNING *", reviewsValues)
+  const { rows: reviews } = await pool.query(reviewsQuery)
+
+  reviews.forEach(async review => {
+    await updatePropertyAndLandlordRatings(review.property_id)
+  })
 }
 
 seedDatabase()
