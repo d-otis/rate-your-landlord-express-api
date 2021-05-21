@@ -9,6 +9,7 @@ const faker = require('faker')
 const { unsplash } = require('../unsplash')
 const format = require('pg-format')
 const pool = require('./pool')
+const { updatePropertyAndLandlordRatings } = require('./helpers')
 
 const numLandlords = 5
 const numPropertiesPerLandlord = 3
