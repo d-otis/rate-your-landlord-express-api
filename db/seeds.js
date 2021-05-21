@@ -65,9 +65,10 @@ const seedDatabase = async () => {
   await destroyAllData()
 
   const landlordsValues = await generateLandlords(numLandlords)
-  const landlordsQuery = format("INSERT INTO landlords (name, image_url, created_at, updated_at) VALUES %L RETURNING *", landlordsValues)
+  const landlordsQuery = format("INSERT INTO landlords (name, image_url, created_at, updated_at) VALUES %L RETURNING id", landlordsValues)
 
-  const { rows: landlords } = await pool.query(landlordsQuery)
+  const { rows: landlordIds } = await pool.query(landlordsQuery)
+  const propertiesValues = await generateProperties(numProperties)
 
   const landlordIds = landlords.map(landlord => landlord.id)
 
