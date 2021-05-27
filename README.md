@@ -11,7 +11,6 @@
 - after that use Sequelize :-)
 - refactor project structure to mirror node-pg documentation?
 - add extra hacky attrs to reviews JSON
-- set random image for landlord from UNSPLASH like RoR
 - hacky landlord rating and property updates when reviews are created
 - enforce strict consistency with underscore vs camelCase
 - better error logging for records not being found
