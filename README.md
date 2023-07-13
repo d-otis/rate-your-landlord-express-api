@@ -2,7 +2,7 @@
 
 ## Start Dev Server
 
-```DEBUG=rate-your-landlord-express:* npm start``
+```DEBUG=rate-your-landlord-express:* npm start```
 
 ## Todo
 
